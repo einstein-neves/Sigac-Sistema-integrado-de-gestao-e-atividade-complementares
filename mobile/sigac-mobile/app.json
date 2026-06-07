@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "SIGAC Mobile",
+    "slug": "sigac-mobile",
+    "version": "1.0.0",
+    "sdkVersion": "54.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "softwareKeyboardLayoutMode": "resize"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "updates": {
+      "enabled": false
+    },
+    "extra": {
+      "apiBaseUrlNote": "Use EXPO_PUBLIC_API_URL no ambiente local. Exemplo: http://192.168.0.10:3000"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-notifications",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "O SIGAC precisa acessar a galeria para anexar imagens de comprovantes.",
+          "cameraPermission": "O SIGAC precisa acessar a camera para fotografar comprovantes."
+        }
+      ],
+      "expo-font",
+      "expo-asset"
+    ]
+  }
+}

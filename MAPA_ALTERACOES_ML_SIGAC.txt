@@ -1,0 +1,49 @@
+﻿MAPA DAS ALTERAÇÕES ML SIGAC
+
+Este arquivo mostra onde estão os marcadores de INÍCIO e FIM das alterações feitas para integrar o Machine Learning ao SIGAC.
+Procure por "ML SIGAC" no VS Code para achar os blocos rapidamente.
+
+1) db.js
+- Linhas 274 a 307: criação das tabelas ml_execucoes e ml_risco_alunos.
+- Linhas 380 a 386: índices das tabelas do ML.
+
+2) server.js
+- Linhas 13 a 15: import do execFile para rodar Python.
+- Linhas 84 a 89: constantes ML_DIR, ML_REPORTS_DIR, ML_MODELS_DIR e PYTHON_BIN.
+- Linhas 1640 a 1728: helpers para executar Python, ler CSV/TXT e normalizar risco.
+- Linhas 2362 a 2470: rotas /api/ml/executar, /api/ml/ultima-execucao, /api/ml/risco-alunos e /api/ml/historico.
+
+3) adminsigac.html
+- Linhas 136 a 177: card do dashboard Admin/Superadmin para Machine Learning.
+- Linhas 143 a 145: botão Atualizar análise ML dentro do card.
+
+4) coordenador.html
+- Linhas 105 a 126: card do dashboard Coordenador para consultar risco dos alunos.
+
+5) js/admin.js
+- Linhas 2697 a 2802: funções JavaScript do Admin para consultar/executar ML e renderizar a tabela.
+- Linhas 2820 a 2822: chamada setupMlDashboard() durante a inicialização do painel Admin.
+
+6) js/coordenador.js
+- Linhas 1484 a 1545: funções JavaScript do Coordenador para consultar a última análise ML.
+- Linhas 1562 a 1564: chamada setupCoordinatorMlDashboard() durante a inicialização do painel Coordenador.
+
+7) vendor/css/19-ml-dashboard.css
+- Linhas 12 a 57: estilos do card/tabela/badges de Machine Learning.
+
+8) sigac.css
+- Linhas 32 a 34: importação do CSS novo 19-ml-dashboard.css.
+
+9) .env.example
+- Linhas 3 a 5: variável PYTHON_BIN para configurar o Python usado pela API.
+
+10) .gitignore
+- Linhas 32 a 54: regras para manter a estrutura do ML/Mobile sem subir arquivos gerados.
+
+Validações feitas:
+- node --check server.js
+- node --check db.js
+- node --check js/admin.js
+- node --check js/coordenador.js
+- python -m py_compile nos 4 scripts da pasta ml/scripts
+- execução dos 4 scripts ML para confirmar geração de arquivos

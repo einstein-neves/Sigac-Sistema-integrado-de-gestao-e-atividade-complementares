@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- SIGAC - Página de esqueci senha para geração de senha temporária. -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGAC - Esqueci minha senha</title>
+  <link rel="icon" type="image/png" href="Logo SIGAC-otimizada.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="SIGAC">
+  <link rel="stylesheet" href="sigac.css?v=matricula-sem-token-2026-05-08">
+</head>
+<body>
+  <div class="container-login">
+    <div class="login-card">
+      <div class="login-hero">
+        <div class="login-brand">
+          <img src="Logo SIGAC-otimizada.png" alt="Logo SIGAC">
+          <div>
+            <h1>Esqueci minha senha</h1>
+            <p>Informe o e-mail cadastrado para gerar uma senha temporária. Depois faça login normalmente e crie sua senha definitiva.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="login-auth">
+        <section class="auth-panel login-panel-surface">
+          <form id="forgotForm">
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" placeholder="Digite seu e-mail institucional" required>
+            </div>
+
+            <button type="submit" class="btn-login">Gerar senha temporária</button>
+          </form>
+
+          <div id="forgotMessage" class="message info hidden"></div>
+          <div class="field-note" style="margin-top: 16px;">
+            <a href="loginsigac.html">Voltar ao login</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+<script src="js/forgot-password.js?v=esqueci-senha-2026-06-05"></script>
+<script src="js/pwa.js"></script>
+</body>
+</html>
