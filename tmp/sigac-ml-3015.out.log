@@ -1,0 +1,9 @@
+SIGAC rodando em http://0.0.0.0:3015
+perf:listSubmissionsForCoordinator:demo_coordinator: 146.624ms
+perf:listCertificatesForCoordinator:demo_coordinator: 316.819ms
+perf:listCoordinatorStudents:demo_coordinator: 542.828ms
+perf:getCoordinatorDashboardSummary:demo_coordinator: 611.159ms
+perf:listSubmissionsForCoordinator:demo_coordinator: 63.407ms
+perf:listCertificatesForCoordinator:demo_coordinator: 70.692ms
+perf:listCoordinatorStudents:demo_coordinator: 176.402ms
+perf:getCoordinatorDashboardData:demo_coordinator: 289.769ms

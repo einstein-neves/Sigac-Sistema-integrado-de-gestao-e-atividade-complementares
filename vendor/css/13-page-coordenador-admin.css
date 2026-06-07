@@ -1,0 +1,1228 @@
+/* =========================================================
+   SIGAC - CSS comentado: 13-page-coordenador-admin.css
+   Objetivo: organizar estilos visuais desta parte do sistema.
+   Comentários são internos e não aparecem na interface do usuário.
+   ========================================================= */
+
+/* Coordenador/Admin específicos */
+.coordinator-panel-heading,
+.admin-courses-title,
+.admin-link-card-head,
+.admin-user-form-note,
+.admin-certificate-status-row,
+.admin-risk-student-meta,
+.admin-link-history-foot,
+.notification-history-meta,
+.audit-log-meta,
+.stack-meta,
+.activity-support,
+.activity-support-row,
+.opportunity-meta,
+.admin-opportunity-category,
+.admin-opportunity-inscritos,
+.admin-user-email,
+.admin-user-role,
+.admin-link-history-date,
+.admin-link-history-course,
+.admin-report-category,
+.risk-meta,
+.submission-stat,
+.submission-card-foot,
+.submission-person,
+.ocr-compare {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.coordinator-panel-heading {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.coordinator-panel-heading h2,
+.admin-courses-title h2,
+.admin-users-toolbar h2,
+.admin-link-card-head h2,
+.admin-report-catalog-card h3 {
+  margin-bottom: 0;
+}
+
+.admin-user-actions,
+.opportunity-card-actions,
+.activity-actions,
+.coordinator-certificate-actions,
+.coordinator-submission-actions,
+.admin-certificate-actions,
+.dashboard-feature-actions,
+.certificate-history-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-user-action-button,
+.admin-user-delete-button {
+  min-height: 34px;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.admin-user-name,
+.admin-link-history-identity strong,
+.submission-title,
+.risk-head strong,
+.stack-title,
+.notification-history-head strong,
+.audit-log-head strong {
+  color: var(--heading);
+  font-weight: 850;
+}
+
+.submission-card,
+.submission-showcase,
+.pendingSubmissionsList,
+.admin-submissions-support,
+.admin-certificates-toolbar,
+.admin-opportunities-toolbar,
+.admin-users-toolbar,
+.admin-users-filters,
+.admin-rules-filters,
+.admin-course-search,
+.admin-opportunity-search,
+.coordinator-student-filters,
+.coordinator-certificates-toolbar,
+.coordinator-activities-filters,
+.coordinator-opportunity-filters,
+.coordinator-submission-filters,
+.filters-bar,
+.dashboard-toolbar,
+.audit-toolbar {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  background: var(--surface-1);
+}
+
+.admin-link-flow-card,
+.coordinator-link-flow,
+.student-link-flow {
+  background: var(--info-soft);
+  border-color: var(--info-border);
+}
+
+.admin-users-toolbar {
+  align-items: end;
+}
+
+.admin-user-search {
+  flex: 1 1 260px;
+  min-width: 220px;
+}
+
+.admin-user-search input {
+  width: 100%;
+}
+
+.admin-users-filters {
+  flex: 2 1 560px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  align-items: end;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.admin-users-filters label,
+.admin-rules-filters label,
+.admin-opportunities-toolbar label,
+.admin-submissions-filters label,
+.admin-certificates-toolbar label,
+.coordinator-student-filters label,
+.coordinator-activities-filters label,
+.coordinator-opportunity-filters label,
+.coordinator-submission-filters label,
+.coordinator-certificates-toolbar label {
+  min-width: 0;
+}
+
+.admin-users-filters .custom-select,
+.admin-rules-filters .custom-select,
+.admin-opportunities-toolbar .custom-select,
+.admin-submissions-filters .custom-select,
+.admin-certificates-toolbar .custom-select,
+.coordinator-student-filters .custom-select,
+.coordinator-activities-filters .custom-select,
+.coordinator-opportunity-filters .custom-select,
+.coordinator-submission-filters .custom-select,
+.coordinator-certificates-toolbar .custom-select {
+  width: 100%;
+}
+
+.admin-users-filters .custom-select-menu,
+.admin-rules-filters .custom-select-menu,
+.admin-opportunities-toolbar .custom-select-menu,
+.admin-submissions-filters .custom-select-menu,
+.admin-certificates-toolbar .custom-select-menu,
+.coordinator-student-filters .custom-select-menu,
+.coordinator-activities-filters .custom-select-menu,
+.coordinator-opportunity-filters .custom-select-menu,
+.coordinator-submission-filters .custom-select-menu,
+.coordinator-certificates-toolbar .custom-select-menu {
+  width: max-content;
+  min-width: 100%;
+  max-width: min(360px, calc(100vw - 48px));
+  overflow-x: hidden;
+}
+
+.admin-link-step,
+.coordinator-rule-step {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.coordinator-rule-step-index {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--white);
+  font-weight: 900;
+}
+
+#regras > .dual-grid {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: min(1120px, 100%);
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+#regras > .dual-grid > .card {
+  width: 100%;
+  min-width: 0;
+}
+
+#regras #ruleForm {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.15fr) minmax(200px, .95fr) minmax(260px, 1fr);
+  gap: 12px;
+  align-items: end;
+}
+
+#regras #ruleForm .coordinator-rule-step {
+  display: block;
+}
+
+#regras #ruleForm .coordinator-rule-step-index {
+  display: none;
+}
+
+#regras #ruleForm > .field,
+#regras #ruleForm .coordinator-rule-step .field {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+#regras #ruleForm .coordinator-rule-guided-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(112px, 1fr));
+  gap: 10px;
+}
+
+#regras #ruleForm .coordinator-rule-hints-grid,
+#regras #ruleForm .coordinator-rule-toggle-group {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+#regras #ruleForm .coordinator-rule-hint-card,
+#regras #ruleForm .coordinator-rule-toggle {
+  min-height: 0;
+}
+
+#regras #ruleForm .coordinator-rule-hint-card p,
+#regras #ruleForm .coordinator-rule-toggle small,
+#regras #ruleForm .field-note {
+  line-height: 1.35;
+}
+
+#regras #ruleForm > button {
+  grid-column: 1 / -1;
+  justify-self: start;
+  min-height: 36px;
+  padding: 8px 14px;
+}
+
+#rulesList.coordinator-rules-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+#rulesList .coordinator-rules-table-wrap {
+  width: 100%;
+  max-height: 520px;
+}
+
+#rulesList .coordinator-rules-table {
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.admin-export-button {
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+  padding: 14px;
+  border-radius: var(--radius);
+}
+
+.admin-export-button strong {
+  color: currentColor;
+}
+
+.admin-export-button span {
+  color: var(--white-alpha-84);
+  font-size: 12px;
+}
+
+/* OCR/Admin: cores visuais de aprovação e rejeição dos certificados */
+.admin-certificate-card.is-approved,
+.coordinator-certificate-card.is-approved,
+.sigac-certificate-card.is-approved {
+  background: var(--success-soft) !important;
+  border-color: var(--success-border) !important;
+}
+
+.admin-certificate-card.is-approved::before,
+.admin-certificate-card.ocr-approved::before,
+.coordinator-certificate-card.is-approved::before,
+.coordinator-certificate-card.ocr-approved::before,
+.sigac-certificate-card.is-approved::before,
+.sigac-certificate-card.ocr-approved::before {
+  background: var(--success) !important;
+}
+
+.admin-certificate-card.is-rejected,
+.coordinator-certificate-card.is-rejected,
+.sigac-certificate-card.is-rejected {
+  background: var(--danger-soft) !important;
+  border-color: var(--danger-border) !important;
+}
+
+.admin-certificate-card.ocr-manual:not(.is-approved):not(.is-rejected),
+.coordinator-certificate-card.ocr-manual:not(.is-approved):not(.is-rejected),
+.sigac-certificate-card.ocr-manual:not(.is-approved):not(.is-rejected) {
+  background: var(--warning-soft) !important;
+  border-color: var(--warning-border) !important;
+}
+
+.admin-certificate-card.ocr-rejected:not(.is-approved),
+.coordinator-certificate-card.ocr-rejected:not(.is-approved),
+.sigac-certificate-card.ocr-rejected:not(.is-approved) {
+  background: var(--danger-soft) !important;
+  border-color: var(--danger-border) !important;
+}
+
+.admin-certificate-card.ocr-approved:not(.is-rejected),
+.coordinator-certificate-card.ocr-approved:not(.is-rejected),
+.sigac-certificate-card.ocr-approved:not(.is-rejected) {
+  background: var(--success-soft) !important;
+  border-color: var(--success-border) !important;
+}
+
+.admin-certificate-card.is-rejected::before,
+.admin-certificate-card.ocr-rejected::before,
+.coordinator-certificate-card.is-rejected::before,
+.coordinator-certificate-card.ocr-rejected::before,
+.sigac-certificate-card.is-rejected::before,
+.sigac-certificate-card.ocr-rejected::before {
+  background: var(--danger) !important;
+}
+
+.admin-certificate-card.ocr-approved .admin-certificate-status-row,
+.coordinator-certificate-card.ocr-approved .sigac-certificate-meta > div,
+.sigac-certificate-card.ocr-approved .sigac-certificate-status-row {
+  background: var(--success-soft);
+  border: 1px solid var(--success-border);
+  border-radius: var(--radius);
+  padding: 10px;
+}
+
+.admin-certificate-card.ocr-rejected .admin-certificate-status-row,
+.coordinator-certificate-card.ocr-rejected .sigac-certificate-meta > div,
+.sigac-certificate-card.ocr-rejected .sigac-certificate-status-row {
+  background: var(--danger-soft);
+  border: 1px solid var(--danger-border);
+  border-radius: var(--radius);
+  padding: 10px;
+}
+
+.admin-certificate-card.ocr-manual .admin-certificate-status-row,
+.coordinator-certificate-card.ocr-manual .sigac-certificate-meta > div,
+.sigac-certificate-card.ocr-manual .sigac-certificate-status-row {
+  background: var(--warning-soft);
+  border: 1px solid var(--warning-border);
+  border-radius: var(--radius);
+  padding: 10px;
+}
+
+.ocr-compare > div {
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.ocr-compare > div:first-child {
+  background: var(--surface-2);
+  color: var(--heading);
+}
+
+.ocr-compare > div.ocr-match {
+  background: var(--success-soft);
+  border: 1px solid var(--success-border);
+  color: var(--success-text);
+}
+
+.ocr-compare > div.ocr-mismatch,
+.ocr-compare > div.ocr-missing {
+  background: var(--danger-soft);
+  border: 1px solid var(--danger-border);
+  color: var(--danger-text);
+}
+
+.admin-certificate-card.is-approved,
+.admin-certificate-card.is-rejected,
+.admin-certificate-card.ocr-approved,
+.admin-certificate-card.ocr-rejected,
+.admin-certificate-card.ocr-manual,
+.coordinator-certificate-card.is-approved,
+.coordinator-certificate-card.is-rejected,
+.coordinator-certificate-card.ocr-approved,
+.coordinator-certificate-card.ocr-rejected,
+.coordinator-certificate-card.ocr-manual,
+.sigac-certificate-card.is-approved,
+.sigac-certificate-card.is-rejected,
+.sigac-certificate-card.ocr-approved,
+.sigac-certificate-card.ocr-rejected,
+.sigac-certificate-card.ocr-manual {
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-certificate-card.is-approved::before,
+.admin-certificate-card.is-rejected::before,
+.admin-certificate-card.ocr-approved::before,
+.admin-certificate-card.ocr-rejected::before,
+.admin-certificate-card.ocr-manual::before,
+.coordinator-certificate-card.is-approved::before,
+.coordinator-certificate-card.is-rejected::before,
+.coordinator-certificate-card.ocr-approved::before,
+.coordinator-certificate-card.ocr-rejected::before,
+.coordinator-certificate-card.ocr-manual::before,
+.sigac-certificate-card.is-approved::before,
+.sigac-certificate-card.is-rejected::before,
+.sigac-certificate-card.ocr-approved::before,
+.sigac-certificate-card.ocr-rejected::before,
+.sigac-certificate-card.ocr-manual::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+.admin-certificate-card.ocr-manual::before,
+.coordinator-certificate-card.ocr-manual::before,
+.sigac-certificate-card.ocr-manual::before {
+  background: var(--warning) !important;
+}
+
+.admin-certificate-card.is-approved::before,
+.coordinator-certificate-card.is-approved::before,
+.sigac-certificate-card.is-approved::before {
+  background: var(--success) !important;
+}
+
+.admin-certificate-card.is-rejected::before,
+.coordinator-certificate-card.is-rejected::before,
+.sigac-certificate-card.is-rejected::before {
+  background: var(--danger) !important;
+}
+
+
+
+/* =========================================================
+   OCR - painel visual de decisão e feedback rápido
+   Cole no final de vendor/css/13-page-coordenador-admin.css
+   ========================================================= */
+
+.ocr-decision-panel {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.ocr-decision-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.ocr-decision-head strong {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.ocr-decision-head span {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.ocr-decision-panel p {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+
+.ocr-decision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ocr-decision-grid > div {
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.ocr-decision-grid strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.ocr-decision-grid ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.ocr-decision-grid li {
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.ocr-decision-panel.is-approved {
+  border-color: var(--success-border);
+  background: var(--success-soft);
+  color: var(--success-text);
+}
+
+.ocr-decision-panel.is-rejected {
+  border-color: var(--danger-border);
+  background: var(--danger-soft);
+  color: var(--danger-text);
+}
+
+.ocr-decision-panel.is-manual {
+  border-color: var(--warning-border);
+  background: var(--warning-soft);
+  color: var(--warning-text);
+}
+
+.ocr-decision-panel.is-info {
+  border-color: var(--info-border);
+  background: var(--info-soft);
+  color: var(--info-text);
+}
+
+.ocr-feedback-quick-actions {
+  margin: 8px 0 10px;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--border-strong);
+  background: var(--surface-2);
+}
+
+.ocr-feedback-quick-actions strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.ocr-feedback-quick-actions > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.feedback-template-btn {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  background: var(--bg-card);
+  color: var(--text);
+}
+
+.feedback-template-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xs);
+}
+
+.feedback-template-btn.success {
+  border-color: var(--success-border);
+  background: var(--success-soft);
+  color: var(--success-text);
+}
+
+.feedback-template-btn.warning {
+  border-color: var(--warning-border);
+  background: var(--warning-soft);
+  color: var(--warning-text);
+}
+
+.feedback-template-btn.danger {
+  border-color: var(--danger-border);
+  background: var(--danger-soft);
+  color: var(--danger-text);
+}
+
+.admin-certificate-card-hiding {
+  opacity: 0;
+  transform: scale(.985);
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+@media (max-width: 780px) {
+  .ocr-decision-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   AJUSTES 02/06 - Coordenacao e Admin
+   Feedback de Ameliara/coordenação: telas mais simples, menos duplicidade
+   e listas legíveis para uso real.
+   ========================================================= */
+
+/* Permite que menus customizados de curso abram por cima do card no Coordenador. */
+#alunos .coordinator-student-top .card,
+#alunos .coordinator-student-top .accent-card,
+#alunos .coordinator-student-top .field,
+#alunos .coordinator-student-top form,
+#alunos .coordinator-student-top .custom-select {
+  overflow: visible !important;
+}
+
+#alunos .coordinator-student-top .custom-select-menu {
+  z-index: 5000 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Lista de alunos do Coordenador em formato de tabela simples. */
+.coordinator-student-table-wrap {
+  width: 100%;
+  max-height: 420px;
+  overflow: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+
+.coordinator-student-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.coordinator-student-table th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--surface-2);
+}
+
+.coordinator-student-table th,
+.coordinator-student-table td {
+  padding: 12px 14px;
+  vertical-align: middle;
+}
+
+.coordinator-student-table td strong,
+.coordinator-student-table td span {
+  display: block;
+}
+
+.coordinator-student-table td span {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+/* Painel de vínculos: deixa a caixa de cursos rolável e impede botões duplicados visuais. */
+#studentCourseSelect,
+#userCoursesInput,
+#coordinatorCoursesSelect {
+  min-height: 160px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.admin-links-section .admin-link-form-grid {
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 12px;
+}
+
+.admin-links-section .admin-links-flow-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr));
+  align-items: stretch;
+}
+
+.admin-links-section .admin-link-flow-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 14px;
+  padding: 18px 20px;
+  min-height: 0;
+  background: var(--surface-1);
+  border-color: var(--border-subtle);
+}
+
+.admin-links-section .admin-link-card-head {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+}
+
+.admin-links-section .admin-link-step {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  border: 1px solid rgba(249, 115, 22, .34);
+  border-radius: 12px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: none;
+}
+
+.admin-links-section .admin-link-card-head h2 {
+  color: var(--heading);
+  font-size: 19px;
+  line-height: 1.15;
+}
+
+.admin-links-section .admin-link-card-head p {
+  max-width: 34ch;
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+.admin-links-section form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.admin-links-section .field,
+.admin-links-section .custom-select,
+.admin-links-section .custom-select-trigger {
+  min-width: 0;
+  width: 100%;
+}
+
+.admin-links-section .custom-select-menu {
+  width: max-content;
+  min-width: min(420px, calc(100vw - 48px));
+  max-width: min(680px, calc(100vw - 48px));
+  overflow-x: hidden;
+}
+
+.admin-links-section .custom-select-option-label {
+  max-width: min(600px, calc(100vw - 96px));
+  white-space: nowrap;
+}
+
+.admin-links-section .custom-select-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-links-section .student-link-flow #studentCourseSelect + .custom-select .custom-select-menu,
+.admin-links-section .coordinator-link-flow #coordinatorCoursesSelect + .custom-select .custom-select-menu {
+  right: 0;
+  left: auto;
+}
+
+.admin-link-flow-card .admin-link-action-row button {
+  min-width: 240px;
+}
+
+.admin-links-section .admin-link-action-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0;
+}
+
+.admin-links-section .admin-link-action-row .small {
+  max-width: none;
+  line-height: 1.4;
+}
+
+.admin-links-section .admin-link-action-row button {
+  justify-self: end;
+  min-width: 220px;
+}
+
+.admin-links-section .message {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 0;
+  margin-top: 0;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+.admin-links-history-card {
+  padding: 16px;
+}
+
+.admin-links-history-table-wrap {
+  max-height: 360px;
+  overflow: auto;
+  margin-top: 12px;
+}
+
+.admin-links-history-table {
+  min-width: 980px;
+}
+
+.admin-links-history-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.admin-links-history-table td {
+  vertical-align: middle;
+}
+
+.admin-links-history-table tr.is-inactive {
+  opacity: .72;
+}
+
+.admin-links-history-table .admin-link-course-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 3px;
+}
+
+.admin-links-history-table .admin-link-course-chips span {
+  min-height: 20px;
+  padding: 3px 7px;
+  font-size: 10px;
+}
+
+.admin-link-table-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+}
+
+.admin-link-table-user .avatar-mini {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+}
+
+/* Ajuste de respiro em grids do Admin/Coordenador. */
+.admin-links-flow-grid,
+.coordinator-student-top,
+.dual-grid {
+  gap: 18px;
+}
+
+/* Ajustes 03/06 - padrao administrativo compacto */
+.admin-courses-layout {
+  grid-template-columns: minmax(280px, .85fr) minmax(0, 1.7fr);
+  align-items: start;
+}
+
+#cursos .admin-courses-layout,
+#regras .admin-rules-layout,
+#oportunidades .admin-opportunities-layout,
+#atividades > .dual-grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+  max-width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+#cursos .admin-courses-list-card,
+#regras .admin-rules-list-card,
+#oportunidades .admin-opportunities-list-card,
+#atividades .coordinator-activity-list-card {
+  width: 100%;
+  min-width: 0;
+}
+
+#coursesList.admin-courses-grid,
+#rulesList.admin-rules-grid,
+#opportunitiesAdminList.admin-opportunities-grid,
+#coordinatorStudentsList.coordinator-student-grid,
+#activitiesList.coordinator-activities-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) !important;
+  width: 100%;
+  min-width: 0;
+}
+
+#coursesList > *,
+#rulesList > *,
+#opportunitiesAdminList > *,
+#coordinatorStudentsList > *,
+#activitiesList > * {
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-course-form-card {
+  padding: 16px;
+}
+
+.admin-course-form-grid {
+  display: grid;
+  grid-template-columns: minmax(90px, .7fr) minmax(0, 1.3fr);
+  gap: 10px;
+}
+
+.admin-course-form-grid .field {
+  margin-bottom: 0;
+}
+
+.admin-course-name-field,
+.admin-course-inline-grid,
+.admin-course-form-grid button,
+.admin-course-form-card .message {
+  grid-column: 1 / -1;
+}
+
+.admin-course-inline-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(120px, .7fr);
+  gap: 10px;
+}
+
+.operational-summary-grid.metrics {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.dashboard-summary-title {
+  margin: 6px 0 10px;
+}
+
+.operational-summary-grid .metric-card {
+  min-height: 108px;
+  padding: 14px;
+  gap: 7px;
+}
+
+.operational-summary-grid .metric-icon {
+  display: none;
+}
+
+.operational-summary-grid .metric-value {
+  font-size: 28px;
+}
+
+.summary-chips,
+.coordinator-flow-highlights,
+#coordinatorActivitiesHighlights,
+#coordinatorStudentsHighlights,
+#coordinatorOpportunityHighlights {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-1);
+  color: var(--muted-2);
+  font-size: 12px;
+}
+
+.summary-chip strong {
+  font-size: 15px;
+}
+
+.activity-search-box > span[aria-hidden="true"] {
+  display: none;
+}
+
+.coordinator-certificate-grid,
+.admin-certificates-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  max-height: none;
+  overflow: visible;
+  padding-right: 4px;
+  scrollbar-width: thin;
+}
+
+.admin-certificate-card,
+.coordinator-certificate-card,
+.sigac-certificate-card {
+  padding: 14px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+}
+
+.admin-certificates-queue-card,
+.coordinator-certificates-panel {
+  background: var(--surface-1) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+.admin-certificates-queue-card::before,
+.coordinator-certificates-panel::before {
+  background: var(--primary) !important;
+}
+
+.admin-certificates-queue-card .notice,
+.coordinator-certificates-panel .notice {
+  width: 100%;
+  max-width: none;
+}
+
+.admin-certificate-meta-grid,
+.coordinator-certificate-meta,
+.sigac-certificate-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.admin-certificate-meta-grid > div,
+.coordinator-certificate-meta-card,
+.sigac-certificate-meta > div {
+  min-height: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.admin-certificate-summary,
+.coordinator-certificate-summary,
+.sigac-certificate-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.sigac-certificate-summary > div {
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, .64);
+}
+
+.sigac-certificate-summary span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--heading);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.sigac-certificate-summary p {
+  margin: 0;
+  color: var(--muted-2);
+  line-height: 1.45;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.sigac-certificate-head,
+.sigac-certificate-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sigac-certificate-head h3 {
+  margin: 2px 0 0;
+  font-size: 16px;
+}
+
+.sigac-certificate-status-row {
+  margin: 10px 0;
+  padding: 9px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.sigac-certificate-status-row span,
+.admin-certificate-status-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sigac-ocr-details {
+  margin: 10px 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.sigac-ocr-details summary {
+  cursor: pointer;
+  padding: 10px 12px;
+  color: var(--heading);
+  font-weight: 850;
+}
+
+.sigac-ocr-details[open] summary {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ocr-compare {
+  max-height: none;
+  overflow: visible;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.ocr-compare > div {
+  display: grid;
+  grid-template-columns: minmax(120px, .7fr) repeat(2, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.sigac-certificate-request-files {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.sigac-certificate-request-file {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--surface-muted);
+}
+
+.sigac-certificate-request-file .sigac-ocr-details {
+  margin: 0;
+}
+
+.notification-history-recipients .summary-chip {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#notificationsList,
+.notifications-timeline {
+  max-height: 560px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.menu-badge:empty,
+.menu-badge.is-empty {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .operational-summary-grid.metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #regras #ruleForm {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #regras #ruleForm .coordinator-rule-guided-grid {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 980px) {
+  .admin-courses-layout,
+  .admin-course-form-grid,
+  .admin-course-inline-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .operational-summary-grid.metrics,
+  .admin-certificate-meta-grid,
+  .coordinator-certificate-meta {
+    grid-template-columns: 1fr;
+  }
+
+  #regras #ruleForm,
+  #regras #ruleForm .coordinator-rule-guided-grid,
+  #regras #ruleForm .coordinator-rule-hints-grid,
+  #regras #ruleForm .coordinator-rule-toggle-group {
+    grid-template-columns: 1fr;
+  }
+}

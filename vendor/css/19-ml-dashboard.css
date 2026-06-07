@@ -1,0 +1,68 @@
+/* =========================================================
+   SIGAC - CSS comentado: 19-ml-dashboard.css
+   Objetivo: organizar estilos visuais desta parte do sistema.
+   Comentários são internos e não aparecem na interface do usuário.
+   ========================================================= */
+
+/* =========================================================
+   ML Dashboard - estilos dos cards de Machine Learning
+   Usado nos painéis de Admin/Superadmin e Coordenador.
+   ========================================================= */
+
+/* ===== INÍCIO BLOCO ML SIGAC: estilos usados pelos cards/tabelas de Machine Learning ===== */
+
+/* ML - Card principal do painel de análise */
+.ml-dashboard-card {
+  margin-top: 18px;
+  border-left: 4px solid var(--primary, #2563eb);
+}
+
+/* ML - Caixa de status da última execução/consulta */
+.ml-status-box {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--bg-soft, #f8fafc);
+  border: 1px solid var(--border-subtle, #e5e7eb);
+  margin-bottom: 12px;
+}
+
+/* ML - Grade de indicadores internos do card */
+.ml-metrics-grid {
+  margin: 12px 0;
+}
+
+/* ML - Tabela de alunos classificados por risco */
+.ml-dashboard-card .table-wrap {
+  max-height: 360px;
+  overflow: auto;
+}
+
+.ml-risk-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.ml-risk-table th,
+.ml-risk-table td {
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+/* ML - Cores dos níveis de risco exibidos na tabela */
+.badge.baixo {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.medio {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.alto {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ===== FIM BLOCO ML SIGAC: estilos usados pelo painel de Machine Learning ===== */
