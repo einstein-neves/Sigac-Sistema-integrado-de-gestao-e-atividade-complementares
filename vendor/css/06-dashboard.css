@@ -1,0 +1,261 @@
+/* =========================================================
+   SIGAC - CSS comentado: 06-dashboard.css
+   Objetivo: organizar estilos visuais desta parte do sistema.
+   Comentários são internos e não aparecem na interface do usuário.
+   ========================================================= */
+
+/* Dashboard */
+.dashboard-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, .6fr);
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(8,30,63,0.96), rgba(4,16,45,0.96));
+  color: var(--text-on-blue);
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 8px 24px rgba(3,10,28,0.24);
+}
+
+.dashboard-hero *,
+.dashboard-hero h2,
+.dashboard-hero p,
+.dashboard-hero .small,
+.dashboard-hero .eyebrow {
+  color: var(--text-on-blue);
+}
+
+.dashboard-hero::before {
+  background: var(--primary);
+}
+
+.dashboard-hero .eyebrow {
+  border-color: var(--white-alpha-24);
+  background: var(--white-alpha-10);
+}
+
+.dashboard-hero h2 {
+  margin: 6px 0 8px;
+  font-size: clamp(22px, 2.6vw, 36px);
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  font-weight: 900;
+}
+
+.dashboard-progress-ring,
+.dashboard-progress-ring-inner {
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+}
+
+.dashboard-progress-ring {
+  --progress: 0%;
+  --progress-color: var(--primary);
+  width: 160px;
+  height: 160px;
+  margin-inline: auto;
+  padding: 10px;
+  background: conic-gradient(var(--progress-color) var(--progress), rgba(255,255,255,0.06) var(--progress));
+  transition: background 600ms cubic-bezier(.2,.9,.3,1);
+}
+
+.dashboard-progress-ring-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(8,30,63,0.95), rgba(6,20,50,0.95));
+  color: var(--white);
+  font-size: 30px;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.progress,
+.dashboard-progress-bar,
+.mini-progress,
+.admin-course-progress,
+.admin-risk-progress,
+.stack-track,
+.bar-track {
+  overflow: hidden;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+}
+
+.progress span,
+.progress > div,
+.dashboard-progress-bar span,
+.mini-progress span,
+.admin-course-progress span,
+.admin-risk-progress span,
+.stack-fill,
+.bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), color-mix(in srgb, var(--primary) 70%, white));
+  transition: width 800ms cubic-bezier(.2,.9,.3,1);
+}
+
+.dashboard-hero .dashboard-kpis { display:flex; gap:10px; margin-top:12px; flex-wrap:wrap }
+.dashboard-hero .dashboard-kpi-card { min-width:120px }
+.dashboard-progress-details { padding:6px 0 }
+.dashboard-progress-head h3 { margin:0; font-size:13px; color:rgba(255,255,255,0.95) }
+.dashboard-progress-head .badge { background: rgba(255,255,255,0.06); color:var(--text-on-blue); font-weight:800 }
+
+.metric-value,
+.kpi-value,
+.ms-val,
+.summary-stat strong,
+.summary-chip strong,
+.report-count,
+.stack-title strong {
+  color: var(--heading);
+  font-weight: 900;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1;
+}
+
+.metric-card {
+  position: relative;
+  min-height: 120px;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.metric-card h3 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.metric-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.metric-trend,
+.kpi-trend {
+  color: var(--success);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.dashboard-toolbar {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(220px, 260px) minmax(140px, 180px);
+  align-items: end;
+  gap: 12px;
+}
+
+.dashboard-toolbar .field {
+  min-width: 0;
+}
+
+.dashboard-toolbar .custom-select,
+.dashboard-toolbar .custom-select-trigger,
+.dashboard-toolbar select {
+  width: 100%;
+  min-width: 0;
+}
+
+.dashboard-toolbar .custom-select-menu {
+  width: max-content;
+  min-width: 100%;
+  max-width: min(320px, calc(100vw - 48px));
+}
+
+.dashboard-toolbar .field:last-child .custom-select-menu {
+  right: 0;
+  left: auto;
+}
+
+.dashboard-toolbar .custom-select-option {
+  justify-content: flex-start;
+  white-space: nowrap;
+}
+
+.dashboard-toolbar .custom-select-option[aria-selected="true"]::after {
+  display: none;
+}
+
+.dashboard-toolbar .custom-select-option-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dashboard-toolbar .custom-select-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard-toolbar .field:first-child .custom-select-menu {
+  min-width: 220px;
+}
+
+.dashboard-toolbar .field:last-child .custom-select-menu {
+  min-width: 140px;
+}
+
+.dashboard-toolbar .field:first-child .custom-select-option-label {
+  max-width: 240px;
+}
+
+.dashboard-toolbar .field:last-child .custom-select-option-label {
+  max-width: 120px;
+}
+
+.dashboard-toolbar .field:last-child .custom-select-option {
+  min-height: 34px;
+}
+
+.dashboard-toolbar .field:last-child .custom-select-trigger {
+  min-height: 40px;
+}
+
+.dashboard-toolbar .field:last-child .custom-select-menu,
+.dashboard-toolbar .field:first-child .custom-select-menu {
+  overflow-x: hidden;
+}
+
+.dashboard-toolbar .field:first-child,
+.dashboard-toolbar .field:nth-child(2),
+.dashboard-toolbar .field:last-child {
+  margin-bottom: 0;
+}
+
+.dashboard-toolbar .field:first-child .custom-select,
+.dashboard-toolbar .field:nth-child(2) .custom-select,
+.dashboard-toolbar .field:last-child .custom-select {
+  max-width: 100%;
+}
+
+.dashboard-toolbar .field:first-child .custom-select-trigger,
+.dashboard-toolbar .field:nth-child(2) .custom-select-trigger,
+.dashboard-toolbar .field:last-child .custom-select-trigger {
+  padding-right: 10px;
+}
+
+.dashboard-toolbar .field:first-child .custom-select-menu,
+.dashboard-toolbar .field:nth-child(2) .custom-select-menu,
+.dashboard-toolbar .field:last-child .custom-select-menu {
+  padding: 5px;
+}
+
+.dashboard-toolbar .field:nth-child(2) .custom-select-menu {
+  min-width: 220px;
+}

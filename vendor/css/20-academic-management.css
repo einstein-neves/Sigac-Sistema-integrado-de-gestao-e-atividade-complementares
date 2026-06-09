@@ -1,0 +1,1849 @@
+﻿/* SIGAC Faculdade - refinamento visual e recursos academicos */
+
+:root,
+html[data-theme="light"] {
+  --font-ui: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  --radius: 10px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --bg-main: #f4f7fb;
+  --bg-card: #ffffff;
+  --surface-1: #ffffff;
+  --surface-2: #f8fafc;
+  --border: #d7e0ea;
+  --border-subtle: #e5edf5;
+  --heading: #111827;
+  --text: #1f2937;
+  --muted: #5f6f84;
+  --brand-orange: #f97316;
+  --brand-orange-strong: #ea580c;
+  --primary: #ea580c;
+  --shadow: 0 14px 34px rgba(15, 23, 42, .08);
+  --shadow-strong: 0 24px 60px rgba(15, 23, 42, .14);
+}
+
+html[data-theme="dark"] {
+  --bg-main: #090d14;
+  --bg-card: #111827;
+  --surface-1: #111827;
+  --surface-2: #151f2e;
+  --surface-3: #1f2937;
+  --border: rgba(148, 163, 184, .22);
+  --border-subtle: rgba(148, 163, 184, .16);
+  --heading: #f8fafc;
+  --text: #e5edf7;
+  --muted: #a8b5c7;
+  --table-head-bg: rgba(249, 115, 22, .13);
+  --table-row-bg: rgba(17, 24, 39, .96);
+  --table-row-hover: rgba(249, 115, 22, .08);
+}
+
+body {
+  font-family: var(--font-ui);
+  letter-spacing: 0;
+  background:
+    linear-gradient(180deg, rgba(249, 115, 22, .055), transparent 260px),
+    var(--bg-main);
+}
+
+.console-header,
+.topbar,
+.card,
+.login-card,
+.auth-panel,
+.login-support-panel,
+.table-wrap,
+.sigac-table-wrap {
+  border-radius: var(--radius-lg);
+}
+
+.console-header {
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, .06);
+}
+
+.sidebar {
+  border-right: 1px solid rgba(255, 255, 255, .12);
+}
+
+.menu button {
+  min-height: 42px;
+  border-radius: 8px;
+}
+
+.main {
+  gap: 18px;
+}
+
+.topbar {
+  border: 1px solid var(--border-subtle);
+  background:
+    linear-gradient(135deg, rgba(249, 115, 22, .08), transparent 42%),
+    var(--surface-1);
+  box-shadow: var(--shadow-xs);
+}
+
+.topbar h1,
+.section-title h2,
+.card h2,
+.chart-head h2 {
+  letter-spacing: 0;
+}
+
+.card {
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow);
+  padding: clamp(20px, 2.2vw, 28px);
+}
+
+.metric-card,
+.dashboard-feature,
+.chart-card,
+.accent-card {
+  border-top: 3px solid rgba(249, 115, 22, .72);
+}
+
+.metric-value {
+  letter-spacing: 0;
+}
+
+.data-table,
+.sigac-data-table {
+  border-spacing: 0;
+}
+
+.table-wrap,
+.sigac-table-wrap {
+  margin-top: 18px !important;
+  margin-bottom: 10px !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .06) !important;
+}
+
+thead th,
+.sigac-data-table thead th {
+  letter-spacing: .04em;
+}
+
+tbody td,
+.sigac-data-table tbody td {
+  line-height: 1.4;
+}
+
+.layout {
+  gap: 28px;
+}
+
+.main {
+  padding: clamp(22px, 3vw, 36px);
+}
+
+.panel-section {
+  display: grid;
+  gap: 28px;
+}
+
+.panel-section.hidden {
+  display: none !important;
+}
+
+.panel-section > .card,
+.panel-section > .dual-grid,
+.panel-section > .dashboard-grid,
+.panel-section > .dashboard-shell,
+.panel-section > .admin-users-layout,
+.panel-section > .admin-courses-layout,
+.panel-section > .admin-links-flow-grid,
+.panel-section > .coordinator-students-shell,
+.panel-section > .certificate-workspace,
+.panel-section > .opportunity-header,
+.panel-section > .certificate-header {
+  margin-bottom: 0;
+}
+
+.dashboard-shell,
+.dashboard-grid,
+.dashboard-overview,
+.dual-grid,
+.grid,
+.admin-users-layout,
+.admin-courses-layout,
+.admin-links-flow-grid,
+.coordinator-students-shell,
+.coordinator-student-top,
+.certificate-workspace,
+.filters-bar,
+.topbar {
+  gap: 22px;
+}
+
+.card + .card,
+.card + .table-wrap,
+.card + .sigac-table-wrap,
+.table-wrap + .card,
+.sigac-table-wrap + .card,
+.section-title + .table-wrap,
+.section-title + .sigac-table-wrap,
+.small + .table-wrap,
+.small + .sigac-table-wrap {
+  margin-top: 22px !important;
+}
+
+.card > h2:first-child,
+.card > .section-title:first-child,
+.card > .chart-head:first-child,
+.card > p.small:first-child {
+  margin-top: 0;
+}
+
+.card > h2,
+.card > .section-title,
+.card > .chart-head,
+.card > p,
+.card > .small,
+.card > form,
+.card > .filters-bar,
+.card > .summary-chips,
+.card > .list,
+.card > [id$="List"],
+.card > [id$="Grid"] {
+  margin-bottom: 16px;
+}
+
+.card > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.card > .table-wrap,
+.card > .sigac-table-wrap,
+.card > [id$="List"] > .table-wrap,
+.card > [id$="List"] > .sigac-table-wrap,
+#auditLogList > .table-wrap,
+#auditLogList > .sigac-table-wrap,
+#courseDeepDiveList > .table-wrap,
+#coursesList > .table-wrap,
+#usersTableBody,
+#rulesList > .table-wrap,
+#submissionsQueueList > .table-wrap,
+#riskReportList > .table-wrap {
+  margin-top: 32px !important;
+}
+
+.summary-stat,
+.metric-card,
+.academic-insight-card {
+  margin-bottom: 0;
+}
+
+.summary-stat + .table-wrap,
+.summary-stat + .sigac-table-wrap,
+.metric-card + .table-wrap,
+.metric-card + .sigac-table-wrap,
+.operational-summary-grid + .table-wrap,
+.operational-summary-grid + .sigac-table-wrap,
+.audit-summary-grid + .table-wrap,
+.audit-summary-grid + .sigac-table-wrap,
+#auditSummary + .table-wrap,
+#auditSummary + .sigac-table-wrap,
+#auditSummary + #auditLogList,
+.admin-certificates-toolbar + .admin-certificates-grid,
+.filters-bar + .table-wrap,
+.filters-bar + .sigac-table-wrap {
+  margin-top: 34px !important;
+}
+
+#auditSummary,
+.audit-summary-grid,
+.operational-summary-grid,
+.metrics,
+.summary-chips,
+.admin-certificate-meta-grid,
+.certificate-summary-grid,
+.opportunity-summary,
+.activity-summary-grid {
+  margin-top: 20px;
+  margin-bottom: 28px !important;
+}
+
+#auditLogList {
+  margin-top: 30px;
+}
+
+#logs .card {
+  display: grid;
+  gap: 24px;
+}
+
+#logs #auditSummary {
+  margin: 8px 0 8px;
+}
+
+#logs #auditLogList {
+  margin-top: 12px;
+}
+
+#logs #auditLogList .table-wrap {
+  margin-top: 0 !important;
+}
+
+table,
+.data-table,
+.sigac-data-table,
+.admin-users-table,
+.admin-courses-table,
+.admin-compact-table,
+.coordinator-activities-table,
+.coordinator-rules-table,
+.coordinator-student-table,
+.ml-risk-table {
+  border-collapse: separate !important;
+  border-spacing: 0 8px !important;
+  padding: 8px !important;
+}
+
+thead th,
+.sigac-data-table thead th,
+.admin-users-table th,
+.admin-courses-table th {
+  padding: 14px 18px !important;
+}
+
+tbody td,
+.sigac-data-table tbody td,
+.admin-users-table td,
+.admin-courses-table td,
+.sigac-compact-table td,
+.sigac-compact-table th {
+  padding: 15px 18px !important;
+}
+
+tbody tr,
+.sigac-data-table tbody tr,
+.admin-user-row {
+  box-shadow: 0 1px 0 var(--border-subtle);
+}
+
+.table-subtext {
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+.admin-courses-active-table,
+.admin-rules-table,
+.admin-courses-table,
+.admin-links-history-table,
+.admin-audit-table,
+.admin-opportunities-table,
+.admin-risk-table,
+.coordinator-activities-table,
+.coordinator-rules-table,
+.coordinator-student-table,
+.ml-risk-table {
+  min-width: 1080px;
+}
+
+.admin-courses-active-table td:first-child,
+.admin-courses-table td:first-child,
+.coordinator-student-table td:first-child,
+.coordinator-activities-table td:first-child,
+.coordinator-rules-table td:first-child {
+  min-width: 190px;
+}
+
+.admin-courses-table td strong,
+.admin-courses-active-table td strong,
+.coordinator-student-table td strong {
+  display: block;
+  line-height: 1.35;
+}
+
+.admin-courses-table td:first-child span,
+.admin-courses-active-table td:first-child span,
+.course-tabs-grid td:first-child span,
+.table-subtext,
+.admin-course-sigla {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-courses-table td:first-child strong + span,
+.admin-courses-active-table td:first-child strong + span,
+.course-tabs-grid td:first-child strong + span,
+.table-subtext {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.badge,
+.menu-badge,
+.status-pill,
+.admin-course-sigla {
+  white-space: nowrap;
+}
+
+.menu-badge,
+.menu-badge.attention {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  min-height: 22px;
+  margin-left: auto;
+  padding: 2px 7px;
+  border: 1px solid rgba(255, 255, 255, .22) !important;
+  border-radius: 999px;
+  background: var(--primary) !important;
+  color: #fff !important;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 6px 14px rgba(249, 115, 22, .28);
+}
+
+.menu-badge::before,
+.menu-badge.attention::before {
+  content: none !important;
+  display: none !important;
+}
+
+.menu-badge.hidden,
+.menu-badge.is-empty,
+.menu-badge:empty {
+  display: none !important;
+}
+
+.admin-compact-table-wrap,
+.sigac-scroll-table,
+.admin-risk-table-wrap,
+.admin-audit-table-wrap,
+.admin-courses-active-table-wrap,
+.coordinator-compact-table-wrap,
+.coordinator-student-table-wrap,
+.coordinator-activities-table-wrap,
+.coordinator-rules-table-wrap,
+.ml-dashboard-card .table-wrap {
+  border-color: var(--border-subtle) !important;
+  padding: 8px !important;
+}
+
+.admin-courses-table-card,
+.admin-users-list-card,
+.admin-courses-list-card,
+.coordinator-activity-list-card,
+.coordinator-flow-card,
+.certificate-history-card,
+.opportunity-panel {
+  display: grid;
+  gap: 18px;
+}
+
+/* Certificados/OCR em formato compacto */
+#certificatesAdminList,
+#studentCertificatesList {
+  display: grid;
+  gap: 14px;
+}
+
+#certificatesAdminList .admin-certificate-card,
+#certificatesAdminList .sigac-certificate-card,
+#studentCertificatesList .coordinator-certificate-card,
+#studentCertificatesList .sigac-certificate-card {
+  padding: 14px 16px;
+  gap: 10px;
+}
+
+#certificatesAdminList .admin-certificate-head,
+#certificatesAdminList .sigac-certificate-head,
+#studentCertificatesList .coordinator-certificate-card-top,
+#studentCertificatesList .sigac-certificate-head {
+  margin-bottom: 4px;
+}
+
+#certificatesAdminList .admin-certificate-card > h3,
+#studentCertificatesList .coordinator-certificate-card > h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+#certificatesAdminList .admin-certificate-priority,
+#studentCertificatesList .coordinator-certificate-badges {
+  margin: 0;
+}
+
+#certificatesAdminList .admin-certificate-meta-grid,
+#studentCertificatesList .coordinator-certificate-meta {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+#certificatesAdminList .admin-certificate-meta-grid > div,
+#studentCertificatesList .coordinator-certificate-meta > div {
+  min-height: auto;
+  padding: 8px 10px;
+}
+
+#certificatesAdminList .admin-certificate-summary,
+#studentCertificatesList .coordinator-certificate-summary {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 8px;
+}
+
+#certificatesAdminList .admin-certificate-summary > div,
+#studentCertificatesList .coordinator-certificate-summary > div {
+  padding: 8px 10px;
+}
+
+#certificatesAdminList .admin-certificate-summary p,
+#studentCertificatesList .coordinator-certificate-summary p {
+  margin-top: 5px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.sigac-certificate-request-files {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(132px, 1fr));
+  gap: 8px;
+}
+
+.sigac-certificate-request-file {
+  position: relative;
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  padding: 8px !important;
+  border-radius: 8px !important;
+  background: var(--surface-1);
+}
+
+.sigac-certificate-request-file.is-ocr-rejected {
+  border-color: rgba(239, 68, 68, .5) !important;
+  background: linear-gradient(180deg, rgba(239, 68, 68, .06), transparent), var(--surface-1);
+}
+
+.sigac-certificate-request-file.is-ocr-rejected .sigac-certificate-status-row {
+  padding-right: 28px;
+}
+
+.sigac-certificate-status-row,
+.admin-certificate-status-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 5px;
+  align-items: center;
+}
+
+.sigac-certificate-status-row > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+.sigac-certificate-status-row span,
+.admin-certificate-status-row span {
+  min-width: 0;
+}
+
+.sigac-certificate-status-row strong,
+.admin-certificate-status-row strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ocr-fit-panel {
+  display: grid;
+  gap: 6px;
+  padding: 7px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, .03);
+}
+
+.ocr-fit-panel > strong {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ocr-fit-panel.is-approved {
+  border-color: rgba(22, 163, 74, .35);
+  background: rgba(22, 163, 74, .07);
+}
+
+.ocr-fit-panel.is-rejected {
+  border-color: rgba(239, 68, 68, .35);
+  background: rgba(239, 68, 68, .07);
+}
+
+.ocr-fit-panel.is-review {
+  border-color: rgba(245, 158, 11, .38);
+  background: rgba(245, 158, 11, .08);
+}
+
+.ocr-fit-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+.ocr-fit-grid span {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) auto;
+  gap: 2px 5px;
+  min-width: 0;
+  padding: 5px 6px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 7px;
+  background: var(--surface-0);
+}
+
+.ocr-fit-grid b,
+.ocr-fit-grid em,
+.ocr-fit-grid small {
+  overflow: hidden;
+  font-size: 10px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ocr-fit-grid b {
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.ocr-fit-grid em {
+  color: var(--danger);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.ocr-fit-grid .is-ok em {
+  color: var(--success);
+}
+
+.ocr-fit-grid small {
+  grid-column: 1 / -1;
+  color: var(--text);
+}
+
+.ocr-remove-x {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  padding: 0;
+  border: 1px solid rgba(15, 23, 42, .16);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .72);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, .18);
+  cursor: pointer;
+  opacity: .82;
+}
+
+.ocr-remove-x:hover {
+  background: #ef4444;
+  border-color: rgba(239, 68, 68, .55);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.sigac-ocr-details {
+  margin: 0;
+}
+
+.sigac-ocr-details summary {
+  min-height: 34px;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.sigac-ocr-details[open] {
+  max-height: 260px;
+  overflow: auto;
+}
+
+.sigac-ocr-details .ocr-decision-panel {
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.sigac-ocr-details .ocr-decision-grid {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.sigac-ocr-details .ocr-compare {
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.sigac-ocr-details .ocr-compare > div {
+  grid-template-columns: .9fr 1fr 1fr;
+  padding: 7px 8px;
+  font-size: 12px;
+}
+
+.admin-certificate-actions,
+.coordinator-certificate-actions {
+  gap: 5px;
+}
+
+.admin-certificate-actions button,
+.coordinator-certificate-actions button {
+  min-height: 30px;
+  padding: 5px 8px;
+  font-size: 11px;
+}
+
+.admin-certificate-feedback,
+.coordinator-certificate-feedback-field {
+  margin: 0;
+}
+
+.admin-certificate-feedback label,
+.coordinator-certificate-feedback-field label,
+.certificate-mini-feedback {
+  font-size: 12px;
+}
+
+.admin-certificate-feedback textarea,
+.coordinator-certificate-feedback-field textarea {
+  min-height: 54px;
+  max-height: 92px;
+}
+
+.sigac-certificate-request-file .admin-certificate-feedback,
+.sigac-certificate-request-file .coordinator-certificate-feedback-field {
+  display: none;
+}
+
+.ocr-feedback-quick-actions {
+  padding: 8px !important;
+  gap: 7px !important;
+}
+
+.ocr-feedback-quick-actions > div {
+  gap: 6px !important;
+}
+
+.ocr-feedback-quick-actions button {
+  min-height: 28px;
+  padding: 5px 8px;
+  font-size: 11px;
+}
+
+.certificate-batch-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(249, 115, 22, .35);
+  border-radius: 10px;
+  background: rgba(249, 115, 22, .08);
+}
+
+.certificate-batch-action strong,
+.certificate-batch-action span {
+  display: block;
+}
+
+.certificate-batch-action span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.certificate-batch-action button {
+  flex: 0 0 auto;
+}
+
+/* Notificacoes: comunicado em cima, historico embaixo no mesmo tamanho */
+#notificacoes .notification-management-stack,
+#notificacoes > .dual-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 22px !important;
+  width: 100%;
+  max-width: 980px;
+}
+
+#notificacoes .notification-composer-card,
+#notificacoes .notification-history-panel,
+#notificacoes > .dual-grid > .card {
+  width: 100%;
+  min-height: 0;
+}
+
+#notificacoes .notification-history-panel {
+  display: grid;
+  gap: 14px;
+}
+
+#notificacoes .notifications-timeline,
+#notificacoes #notificationsList {
+  max-height: 430px;
+  overflow: auto;
+  padding-right: 6px;
+}
+
+#notificacoes .notification-composer-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 980px) {
+  #certificatesAdminList .admin-certificate-meta-grid,
+  #certificatesAdminList .admin-certificate-summary,
+  #studentCertificatesList .coordinator-certificate-meta,
+  #studentCertificatesList .coordinator-certificate-summary,
+  .sigac-certificate-request-files,
+  #notificacoes .notification-composer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-batch-action {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1240px) {
+  .sigac-certificate-request-files {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+  }
+}
+
+/* Painel do aluno padronizado com admin/coordenador */
+body.student-panel .topbar-actions-student {
+  align-items: end;
+  gap: 10px;
+}
+
+body.student-panel .topbar-actions-student .field.compact {
+  min-width: min(280px, 100%);
+}
+
+body.student-panel .dashboard-shell,
+body.student-panel #atividades > .card,
+body.student-panel .certificate-upload-card,
+body.student-panel .certificate-history-card,
+body.student-panel .opportunity-panel {
+  gap: 22px;
+}
+
+body.student-panel .dashboard-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr);
+  align-items: stretch;
+  gap: 24px;
+}
+
+body.student-panel .dashboard-hero-copy,
+body.student-panel .dashboard-hero-progress,
+body.student-panel .dashboard-progress-details {
+  min-width: 0;
+}
+
+body.student-panel .dashboard-kpis,
+body.student-panel .dashboard-metrics,
+body.student-panel .activity-summary-grid,
+body.student-panel .certificate-summary-grid,
+body.student-panel .opportunity-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+body.student-panel .dashboard-metrics {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.student-panel .dashboard-kpi-card,
+body.student-panel .metric-card,
+body.student-panel .summary-stat,
+body.student-panel .certificate-summary-card,
+body.student-panel .opportunity-summary-card,
+body.student-panel .activity-meta-card,
+body.student-panel .certificate-meta-card {
+  min-height: auto;
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+body.student-panel .dashboard-kpi-card strong,
+body.student-panel .certificate-summary-card strong,
+body.student-panel .opportunity-summary-card strong,
+body.student-panel .activity-meta-card strong,
+body.student-panel .certificate-meta-card strong {
+  font-size: 17px;
+}
+
+body.student-panel .filters-bar {
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+body.student-panel .activity-status-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+body.student-panel .activity-status-tabs button,
+body.student-panel .activity-filter-side button,
+body.student-panel .certificate-history-actions button,
+body.student-panel .opportunity-card-actions button,
+body.student-panel .dashboard-action-btn {
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+body.student-panel #activitiesList,
+body.student-panel #certificatesList,
+body.student-panel #opportunitiesList .opportunity-grid,
+body.student-panel .dashboard-actions-list,
+body.student-panel .dashboard-notifications {
+  display: grid;
+  gap: 16px;
+}
+
+body.student-panel #activitiesList {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.student-panel .activity-card,
+body.student-panel .opportunity-card,
+body.student-panel .certificate-history-item,
+body.student-panel .dashboard-action-card,
+body.student-panel .notification-item {
+  border-radius: 8px;
+  padding: 16px;
+}
+
+body.student-panel .activity-card-top,
+body.student-panel .certificate-history-top,
+body.student-panel .opportunity-card-head,
+body.student-panel .dashboard-section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+body.student-panel .activity-card h4,
+body.student-panel .certificate-history-title h4,
+body.student-panel .opportunity-card h3,
+body.student-panel .dashboard-action-card h3 {
+  margin: 0;
+  color: var(--heading);
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+body.student-panel .activity-card p,
+body.student-panel .opportunity-card p,
+body.student-panel .certificate-message,
+body.student-panel .dashboard-action-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+body.student-panel .activity-meta-grid,
+body.student-panel .certificate-history-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+body.student-panel .certificate-workspace {
+  grid-template-columns: minmax(320px, .85fr) minmax(0, 1.15fr);
+  align-items: start;
+}
+
+body.student-panel .certificate-upload-card form {
+  display: grid;
+  gap: 14px;
+}
+
+body.student-panel .certificate-dropzone {
+  min-height: 142px;
+  border-radius: 10px;
+}
+
+body.student-panel .certificate-dropzone-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+body.student-panel .certificate-history-card {
+  display: grid;
+}
+
+body.student-panel .student-certificate-card {
+  gap: 12px;
+}
+
+.student-ocr-summary {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--surface-2);
+}
+
+.student-ocr-summary.is-approved {
+  border-color: rgba(22, 163, 74, .35);
+  background: rgba(22, 163, 74, .07);
+}
+
+.student-ocr-summary.is-rejected {
+  border-color: rgba(239, 68, 68, .35);
+  background: rgba(239, 68, 68, .07);
+}
+
+.student-ocr-summary.is-review {
+  border-color: rgba(245, 158, 11, .35);
+  background: rgba(245, 158, 11, .08);
+}
+
+.student-ocr-summary-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.student-ocr-summary-head span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.student-ocr-summary-head strong {
+  overflow: hidden;
+  color: var(--heading);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.student-ocr-checks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.student-ocr-checks span {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--surface-1);
+}
+
+.student-ocr-checks b,
+.student-ocr-checks em,
+.student-ocr-checks small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.student-ocr-checks b {
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.student-ocr-checks em {
+  color: var(--success);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.student-ocr-checks .is-pending em {
+  color: var(--warning);
+}
+
+.student-ocr-checks small {
+  color: var(--text);
+  font-size: 12px;
+}
+
+body.student-panel #opportunitiesList .opportunity-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.student-panel .opportunity-card {
+  min-height: 190px;
+  align-content: start;
+}
+
+body.student-panel .opportunity-hours {
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  body.student-panel .dashboard-hero,
+  body.student-panel .certificate-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  body.student-panel .dashboard-metrics,
+  body.student-panel #opportunitiesList .opportunity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  body.student-panel .dashboard-kpis,
+  body.student-panel .dashboard-metrics,
+  body.student-panel .activity-summary-grid,
+  body.student-panel .certificate-summary-grid,
+  body.student-panel .opportunity-summary,
+  body.student-panel #activitiesList,
+  body.student-panel #opportunitiesList .opportunity-grid,
+  body.student-panel .activity-meta-grid,
+  body.student-panel .certificate-history-meta,
+  .student-ocr-checks {
+    grid-template-columns: 1fr;
+  }
+
+  body.student-panel .topbar-actions-student,
+  body.student-panel .activity-card-top,
+  body.student-panel .certificate-history-top,
+  body.student-panel .opportunity-card-head,
+  body.student-panel .dashboard-section-head {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: var(--font-ui);
+}
+
+input,
+select,
+textarea {
+  border-radius: 8px;
+}
+
+button,
+.secondary,
+.btn-login,
+.header-button {
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.login-card {
+  width: min(1180px, 100%);
+}
+
+.login-hero {
+  background:
+    linear-gradient(145deg, rgba(249, 115, 22, .24), transparent 38%),
+    linear-gradient(145deg, #0f172a, #1f2937);
+}
+
+.login-hero-copy h2 {
+  max-width: 14ch;
+  letter-spacing: 0;
+}
+
+.login-form-heading {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.login-form-heading h2 {
+  margin: 0;
+  color: var(--heading);
+  font-size: clamp(22px, 3vw, 30px);
+}
+
+.login-form-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.password-help-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 12px;
+  align-items: center;
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+.password-help-panel strong,
+.password-help-panel span {
+  min-width: 0;
+}
+
+.password-help-panel span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.password-help-panel a {
+  grid-row: span 2;
+  color: var(--primary);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.sigac-form-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.sigac-form-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.academic-insight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.academic-insight-card {
+  padding: 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--surface-1);
+}
+
+.academic-insight-card strong {
+  display: block;
+  color: var(--heading);
+  font-size: 18px;
+}
+
+.academic-insight-card span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.sigac-chat-launcher {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 80;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow-strong);
+}
+
+.sigac-chat-panel {
+  position: fixed;
+  right: 22px;
+  bottom: 82px;
+  z-index: 81;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: min(380px, calc(100vw - 28px));
+  max-height: min(620px, calc(100vh - 112px));
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-1);
+  box-shadow: var(--shadow-strong);
+}
+
+.sigac-chat-panel[hidden] {
+  display: none;
+}
+
+.sigac-chat-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(249, 115, 22, .16), transparent), var(--surface-1);
+}
+
+.sigac-chat-head h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.sigac-chat-head p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.sigac-chat-close {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+}
+
+.sigac-chat-messages {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-height: 250px;
+  overflow: auto;
+  padding: 14px;
+  background: var(--surface-2);
+}
+
+.sigac-chat-message {
+  max-width: 86%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--surface-1);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.sigac-chat-message.is-student {
+  justify-self: end;
+  border-color: rgba(249, 115, 22, .34);
+  background: rgba(249, 115, 22, .12);
+}
+
+.sigac-chat-message small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+}
+
+.sigac-chat-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sigac-chat-form textarea {
+  min-height: 44px;
+  max-height: 120px;
+  resize: vertical;
+}
+
+.sigac-chat-student-select {
+  grid-column: 1 / -1;
+}
+
+/* Coordenador > Alunos: formulario amplo em cima e fluxo logo abaixo */
+#alunos .coordinator-students-shell {
+  display: grid;
+  gap: 26px;
+}
+
+#alunos .coordinator-student-top {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 22px !important;
+  align-items: stretch;
+}
+
+#alunos .coordinator-student-top > .card,
+#alunos .coordinator-student-top > .coordinator-flow-card {
+  width: 100%;
+  max-width: 100%;
+}
+
+#alunos .coordinator-student-top > .card:first-child {
+  min-height: auto;
+}
+
+#alunos #studentForm {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+
+#alunos #studentForm .sigac-form-grid--two {
+  display: contents;
+}
+
+#alunos #studentForm > .field,
+#alunos #studentForm > .sigac-form-grid,
+#alunos #studentForm > button,
+#alunos #studentFormMessage {
+  min-width: 0;
+}
+
+#alunos #studentForm > .field:first-child,
+#alunos #studentForm > .field:has(#studentAddressInput),
+#alunos #studentForm > .field:has(#studentCoursesField),
+#alunos #studentForm > button {
+  grid-column: 1 / -1;
+}
+
+#alunos #studentForm textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+#alunos #studentForm .small {
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+#alunos .coordinator-flow-card {
+  align-content: start;
+}
+
+#alunos .coordinator-flow-card .access-flow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+#alunos .coordinator-flow-card .flow-step {
+  min-height: 92px;
+}
+
+#alunos .coordinator-flow-highlights {
+  margin-top: 14px;
+}
+
+@media (max-width: 920px) {
+  .sigac-form-grid--two,
+  .academic-insight-grid,
+  #alunos #studentForm .sigac-form-grid--two,
+  #alunos .coordinator-flow-card .access-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .password-help-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .password-help-panel a {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .sigac-chat-launcher {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .sigac-chat-panel {
+    right: 14px;
+    bottom: 72px;
+  }
+}
+
+
+/* ===== OCR lote padronizado admin/coordenador ===== */
+.sigac-ocr-batch-card {
+  display: grid;
+  gap: 14px;
+  padding: 16px !important;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px !important;
+  background: var(--surface-0);
+}
+
+.sigac-ocr-batch-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sigac-ocr-batch-head h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 2px 0 4px;
+}
+
+.sigac-ocr-batch-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.sigac-ocr-status-pill,
+.sigac-ocr-batch-counters span,
+.sigac-ocr-cert-chip em {
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.sigac-ocr-status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 6px 10px;
+}
+
+.sigac-ocr-batch-counters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+  max-width: 360px;
+}
+
+.sigac-ocr-batch-counters span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 9px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-1);
+  color: var(--muted);
+}
+
+.sigac-ocr-file-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(132px, 1fr));
+  gap: 9px;
+}
+
+.sigac-ocr-cert-chip {
+  position: relative;
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  min-height: 82px;
+  padding: 10px 34px 9px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  background: var(--surface-1);
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.sigac-ocr-cert-chip:hover,
+.sigac-ocr-cert-chip.is-selected {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, .09);
+}
+
+.sigac-ocr-cert-chip.is-selected {
+  outline: 2px solid rgba(37, 99, 235, .28);
+}
+
+.sigac-ocr-cert-chip span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.sigac-ocr-cert-chip strong {
+  overflow: hidden;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sigac-ocr-cert-chip em {
+  justify-self: start;
+  padding: 6px 8px;
+  font-style: normal;
+}
+
+.sigac-ocr-cert-chip.is-approved,
+.sigac-ocr-status-pill.is-approved,
+.sigac-ocr-batch-counters .is-approved {
+  border-color: rgba(22, 163, 74, .38);
+  background: rgba(22, 163, 74, .09);
+  color: #15803d;
+}
+
+.sigac-ocr-cert-chip.is-review,
+.sigac-ocr-status-pill.is-review,
+.sigac-ocr-batch-counters .is-review {
+  border-color: rgba(245, 158, 11, .42);
+  background: rgba(245, 158, 11, .12);
+  color: #b45309;
+}
+
+.sigac-ocr-cert-chip.is-rejected,
+.sigac-ocr-status-pill.is-rejected,
+.sigac-ocr-batch-counters .is-rejected {
+  border-color: rgba(239, 68, 68, .42);
+  background: rgba(239, 68, 68, .10);
+  color: #b91c1c;
+}
+
+.sigac-ocr-cert-chip.is-removed,
+.sigac-ocr-status-pill.is-removed,
+.sigac-ocr-batch-counters .is-removed {
+  border-color: rgba(100, 116, 139, .34);
+  background: rgba(100, 116, 139, .10);
+  color: #475569;
+}
+
+.sigac-ocr-cert-chip.is-removed {
+  opacity: .82;
+}
+
+.sigac-ocr-batch-summary {
+  display: grid;
+  gap: 8px;
+}
+
+.sigac-ocr-batch-summary h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.sigac-ocr-summary-table {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+}
+
+.sigac-ocr-summary-row {
+  display: grid;
+  grid-template-columns: .8fr 1.15fr 1.15fr;
+  gap: 0;
+  min-width: 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.sigac-ocr-summary-row:first-child {
+  border-top: 0;
+}
+
+.sigac-ocr-summary-row > * {
+  min-width: 0;
+  padding: 9px 10px;
+  border-left: 1px solid var(--border-subtle);
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+
+.sigac-ocr-summary-row > *:first-child {
+  border-left: 0;
+}
+
+.sigac-ocr-summary-row--head {
+  background: var(--surface-1);
+  color: var(--text);
+}
+
+.sigac-ocr-summary-row span:first-child {
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.sigac-ocr-actions {
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.sigac-ocr-feedback-box textarea {
+  min-height: 92px;
+}
+
+.sigac-ocr-batch-details[open] {
+  max-height: 360px;
+}
+
+.sigac-ocr-detail-grid {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.sigac-ocr-detail-row {
+  display: grid;
+  grid-template-columns: .45fr 1.1fr .8fr 1fr 1fr .5fr 1.5fr;
+  gap: 6px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--surface-1);
+  font-size: 11px;
+}
+
+.sigac-ocr-detail-row > * {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sigac-ocr-detail-row small {
+  color: var(--muted);
+}
+
+.sigac-ocr-detail-head {
+  font-weight: 900;
+  background: var(--surface-0);
+}
+
+.sigac-ocr-detail-row.is-approved {
+  border-color: rgba(22, 163, 74, .32);
+}
+
+.sigac-ocr-detail-row.is-review {
+  border-color: rgba(245, 158, 11, .34);
+}
+
+.sigac-ocr-detail-row.is-rejected {
+  border-color: rgba(239, 68, 68, .34);
+}
+
+@media (max-width: 1050px) {
+  .sigac-ocr-file-grid {
+    grid-template-columns: repeat(3, minmax(132px, 1fr));
+  }
+
+  .sigac-ocr-summary-row,
+  .sigac-ocr-detail-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sigac-ocr-summary-row > *,
+  .sigac-ocr-detail-row > * {
+    border-left: 0;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 720px) {
+  .sigac-ocr-batch-head {
+    display: grid;
+  }
+
+  .sigac-ocr-batch-counters {
+    justify-content: flex-start;
+    max-width: none;
+  }
+
+  .sigac-ocr-file-grid {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+}
+
+/* Ajuste fino 04/06: formulário de novo aluno/usuário mais horizontal e compacto */
+.admin-users-section .admin-users-layout {
+  grid-template-columns: minmax(560px, 0.95fr) minmax(620px, 1.35fr);
+  align-items: start;
+}
+
+.admin-users-section .admin-user-form-card {
+  max-width: none;
+}
+
+.admin-users-section #userForm {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 16px;
+}
+
+.admin-users-section #userForm > .field,
+.admin-users-section #userForm > .sigac-form-grid,
+.admin-users-section #userForm > button {
+  min-width: 0;
+}
+
+.admin-users-section #userForm > .field:first-child,
+.admin-users-section #userForm #userAddressInput,
+.admin-users-section #userForm #userCoursesField,
+.admin-users-section #userForm > button {
+  grid-column: 1 / -1;
+}
+
+.admin-users-section #userForm > .sigac-form-grid {
+  display: contents;
+}
+
+.admin-users-section #userForm textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.admin-users-section #userForm .small {
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+@media (max-width: 1180px) {
+  .admin-users-section .admin-users-layout,
+  .admin-users-section #userForm {
+    grid-template-columns: 1fr;
+  }
+}
+.admin-users-section #userForm > .field:has(#userAddressInput),
+.admin-users-section #userForm > .field:has(#userCoursesInput) {
+  grid-column: 1 / -1;
+}

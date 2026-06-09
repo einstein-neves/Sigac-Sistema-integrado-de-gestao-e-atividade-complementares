@@ -1,0 +1,936 @@
+/* SIGAC final visual and structural consistency pass. */
+:root {
+  --content-max: 1500px;
+  --chart-height: 300px;
+  --block-border: color-mix(in srgb, var(--primary) 26%, var(--border-subtle));
+}
+
+.main { min-width: 0; padding: 0; }
+.topbar, .panel-section, .content { width: 100%; max-width: var(--content-max); }
+.panel-section { gap: 20px; }
+
+.card, .metric-card, .chart-card, .profile-hero {
+  border-color: var(--block-border);
+  border-radius: var(--radius);
+}
+
+.dual-grid, .dashboard-grid, .admin-users-layout, .coordinator-student-top { align-items: stretch; }
+.dual-grid > .card, .dashboard-grid > .card, .metrics > .card { height: 100%; }
+
+.chart-card { min-width: 0; grid-template-rows: auto 1fr; }
+.chart-card .chart-head { min-height: 58px; margin-bottom: 0; }
+.chart-card .chart-head h2 { margin-bottom: 4px; font-size: 18px; }
+
+.chart-box, .chart-box--donut, .chart-box--lg, .chart-box--md {
+  width: 100%;
+  height: var(--chart-height);
+  min-height: var(--chart-height);
+  max-height: var(--chart-height);
+  padding: 14px;
+  border-color: var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.chart-box canvas, .chart-box--donut canvas, .chart-box--lg canvas, .chart-box--md canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.table-wrap, .sigac-table-wrap, .admin-users-table-wrap, .coordinator-student-table-wrap {
+  margin: 12px 0 0 !important;
+  border-color: var(--block-border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
+}
+
+thead th, .sigac-data-table thead th { height: 42px; padding: 10px 12px !important; }
+tbody td, .sigac-data-table tbody td { min-height: 44px; padding: 10px 12px !important; }
+.coordinator-course-students-table { min-width: 760px; }
+
+.coordinator-opportunities-table th,
+.student-certificate-table th {
+  color: var(--table-head-text);
+  background: var(--table-head-bg);
+  border-color: var(--table-border);
+}
+
+.coordinator-opportunities-table td,
+.student-certificate-table td {
+  color: var(--muted-2);
+  border-color: var(--table-border);
+}
+
+.coordinator-opportunities-table tbody tr:hover,
+.student-certificate-table tbody tr:hover { background: var(--table-row-hover); }
+
+.student-certificate-table td .small,
+.coordinator-opportunities-table td .small { color: var(--muted); }
+
+.admin-users-section .admin-users-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+}
+
+.admin-users-section .admin-user-form-card,
+.admin-users-section .admin-users-list-card {
+  width: 100%;
+  max-width: none;
+}
+
+.admin-users-section #userForm, #alunos #studentForm {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+}
+
+.admin-users-section #userForm > .field:first-child,
+.admin-users-section #userForm > .field:has(#userEmailInput) { grid-column: span 2; }
+
+.admin-users-section #userForm > .field:has(#userAddressInput),
+.admin-users-section #userForm > .field:has(#userCoursesInput),
+#alunos #studentForm > .field:has(#studentAddressInput),
+#alunos #studentForm > .field:has(#studentCoursesInput) { grid-column: 1 / -1; }
+
+.admin-users-section #userForm > button, #alunos #studentForm > button {
+  grid-column: 1 / -1;
+  justify-self: start;
+  min-width: 220px;
+}
+
+#alunos #studentForm .sigac-form-grid--two { display: contents; }
+#alunos #studentForm > .field:first-child { grid-column: auto; }
+#alunos #studentForm > .field:has(#studentPasswordInput) { grid-column: span 2; }
+#alunos #studentForm > .field:has(#studentCourseInput) { grid-column: 1 / -1; }
+
+.admin-links-section #studentLinkSearch,
+.admin-links-section #coordinatorLinkSearch {
+  min-height: 42px;
+  width: 100%;
+}
+
+.admin-report-catalog .admin-export-button {
+  min-height: 64px;
+}
+
+body.student-panel #activitiesList,
+#oportunidades #opportunitiesList.coordinator-opportunity-grid {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+body.student-panel .student-activities-table-wrap,
+#oportunidades .coordinator-opportunities-table-wrap {
+  width: 100%;
+  max-width: none;
+  overflow-x: auto;
+}
+
+body.student-panel .student-activities-table {
+  width: 100%;
+  min-width: 1060px;
+}
+
+#oportunidades .coordinator-opportunities-table {
+  width: 100% !important;
+  min-width: 920px !important;
+  table-layout: fixed;
+}
+
+#oportunidades .coordinator-opportunities-table .opportunity-col-title { width: 30%; }
+#oportunidades .coordinator-opportunities-table .opportunity-col-hours { width: 8%; }
+#oportunidades .coordinator-opportunities-table .opportunity-col-status { width: 11%; }
+#oportunidades .coordinator-opportunities-table .opportunity-col-enrolled { width: 10%; }
+#oportunidades .coordinator-opportunities-table .opportunity-col-updated { width: 15%; }
+#oportunidades .coordinator-opportunities-table .opportunity-col-actions { width: 26%; }
+
+#oportunidades .coordinator-opportunities-table th,
+#oportunidades .coordinator-opportunities-table td {
+  display: table-cell;
+  height: auto;
+  padding: 12px 14px !important;
+  vertical-align: middle !important;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#oportunidades .coordinator-opportunities-table th {
+  white-space: nowrap;
+}
+
+#oportunidades .coordinator-opportunities-table td:first-child strong,
+#oportunidades .coordinator-opportunities-table td:first-child .small {
+  display: block;
+}
+
+#oportunidades .coordinator-opportunities-table td:first-child .small {
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+#oportunidades .opportunity-table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#oportunidades .opportunity-table-actions button {
+  width: auto;
+  min-width: 72px;
+  min-height: 32px;
+  padding: 6px 9px;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  line-height: 1.2;
+  font-size: 11px;
+}
+
+/* Presentation mode: chat stays implemented but is not exposed in the UI. */
+.sigac-chat-launcher,
+.sigac-chat-panel {
+  display: none !important;
+}
+
+body.student-panel .student-activities-table th:first-child,
+body.student-panel .student-activities-table td:first-child {
+  min-width: 280px;
+  white-space: normal;
+}
+
+body.student-panel .student-activities-table th:last-child,
+body.student-panel .student-activities-table td:last-child {
+  min-width: 210px;
+}
+
+/* Student PWA desktop: align the web portal with the mobile visual language. */
+body.student-panel {
+  --student-navy: #0f1e38;
+  --student-navy-2: #1a3460;
+  --student-blue: #2563b0;
+  --student-blue-soft: #ebf2fb;
+  --student-orange: #e8620a;
+  --student-page-bg: #f0f3f8;
+  --student-border: #d2d8e6;
+  --student-border-soft: #e8ebf3;
+  background: var(--student-page-bg);
+}
+
+html[data-theme="light"] body.student-panel,
+body.student-panel:not(.dark):not(.dark-mode) {
+  --bg-main: var(--student-page-bg);
+  --bg-sidebar: var(--student-navy);
+  --bg-topbar: var(--student-navy);
+  --surface-1: #ffffff;
+  --surface-2: #f8fafc;
+  --table-head-bg: #f0f3f8;
+  --table-head-text: #5a6478;
+  --table-border: var(--student-border-soft);
+  --table-row-bg: #ffffff;
+  --table-row-hover: #f8fbff;
+  --block-border: var(--student-border);
+}
+
+body.student-panel .layout {
+  background: var(--student-page-bg);
+}
+
+body.student-panel .sidebar {
+  width: 164px;
+  background: var(--student-navy);
+  border-right: 0;
+  box-shadow: none;
+}
+
+body.student-panel .console-header {
+  min-height: 42px;
+  padding-block: 0;
+  background: var(--student-navy);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  color: #ffffff;
+}
+
+body.student-panel .console-brand strong,
+body.student-panel .console-context strong,
+body.student-panel .console-context span,
+body.student-panel .status-pill,
+body.student-panel .header-button,
+body.student-panel .header-button.light {
+  color: #ffffff;
+}
+
+body.student-panel .header-button,
+body.student-panel .header-button.light {
+  min-height: 30px;
+  padding: 5px 9px;
+  border-color: rgba(255, 255, 255, .18);
+  background: transparent;
+  box-shadow: none;
+}
+
+body.student-panel .header-button:hover,
+body.student-panel .header-button.light:hover {
+  background: rgba(255, 255, 255, .08);
+  border-color: rgba(255, 255, 255, .28);
+  color: #ffffff;
+}
+
+body.student-panel .sidebar-section-label,
+body.student-panel .menu-group-label {
+  color: rgba(255, 255, 255, .34);
+  font-size: 9px;
+  letter-spacing: .08em;
+}
+
+body.student-panel .user-box {
+  margin: 0;
+  border-block: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 0;
+  background: transparent;
+}
+
+body.student-panel .org-avatar {
+  background: var(--student-orange);
+  color: #ffffff;
+}
+
+body.student-panel .org-copy strong {
+  color: #ffffff;
+}
+
+body.student-panel .org-copy span,
+body.student-panel .logout {
+  color: rgba(255, 255, 255, .62);
+}
+
+body.student-panel .menu button {
+  min-height: 34px;
+  border-radius: 0;
+  border-left: 3px solid transparent;
+  background: transparent;
+  color: rgba(255, 255, 255, .64);
+  box-shadow: none;
+}
+
+body.student-panel .menu button:hover,
+body.student-panel .menu button.active {
+  background: rgba(37, 99, 176, .30);
+  border-left-color: var(--student-orange);
+  color: #ffffff;
+}
+
+body.student-panel .main {
+  background: var(--student-page-bg);
+  gap: 0;
+}
+
+body.student-panel .topbar {
+  max-width: none;
+  min-height: 64px;
+  margin: 0;
+  padding: 10px 18px;
+  border: 0;
+  border-bottom: 1px solid var(--student-border);
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+body.student-panel .topbar h1 {
+  color: #1e2535;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+body.student-panel .topbar p,
+body.student-panel .topbar label {
+  color: #5a6478;
+}
+
+body.student-panel .topbar-actions .secondary {
+  min-height: 32px;
+  padding: 6px 11px;
+  border-radius: 5px;
+  border-color: var(--student-border);
+  background: #ffffff;
+  color: #5a6478;
+  box-shadow: none;
+}
+
+body.student-panel .panel-section {
+  max-width: none;
+  padding: 14px 18px 24px;
+  gap: 12px;
+}
+
+body.student-panel .dashboard-shell,
+body.student-panel .certificate-workspace-stack,
+body.student-panel #atividades > .card,
+body.student-panel .opportunity-panel,
+body.student-panel .certificate-header {
+  max-width: 1280px;
+}
+
+body.student-panel .card,
+body.student-panel .metric-card,
+body.student-panel .dashboard-action-card,
+body.student-panel .student-certificate-card,
+body.student-panel .activity-support-row,
+body.student-panel .certificate-dropzone,
+body.student-panel .activity-filters,
+body.student-panel .certificate-filters {
+  border-color: var(--student-border);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+body.student-panel .dashboard-hero {
+  min-height: 230px;
+  padding: 18px;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(232, 98, 10, .18) 0 70px, transparent 72px),
+    linear-gradient(180deg, var(--student-navy-2), var(--student-navy));
+}
+
+body.student-panel .dashboard-hero h2 {
+  max-width: 620px;
+  font-size: clamp(24px, 2.6vw, 34px);
+}
+
+body.student-panel .dashboard-hero .eyebrow,
+body.student-panel .dashboard-hero .dashboard-kpi-card span,
+body.student-panel .dashboard-progress-details .small,
+body.student-panel .summary-chip {
+  color: rgba(255, 255, 255, .72);
+}
+
+body.student-panel .dashboard-progress-ring {
+  width: 136px;
+  height: 136px;
+}
+
+body.student-panel .dashboard-progress-ring-inner strong {
+  font-size: 28px;
+}
+
+body.student-panel .dashboard-hero .dashboard-kpis {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+body.student-panel .dashboard-hero .dashboard-kpi-card,
+body.student-panel .dashboard-progress-details,
+body.student-panel .summary-chip {
+  border-color: rgba(255, 255, 255, .12);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .07);
+}
+
+body.student-panel .dashboard-metrics,
+body.student-panel .activity-summary-grid,
+body.student-panel .certificate-summary-grid,
+body.student-panel .opportunity-summary {
+  gap: 8px;
+}
+
+body.student-panel .metric-card,
+body.student-panel .certificate-summary-card,
+body.student-panel .opportunity-summary-card {
+  min-height: 96px;
+  padding: 12px;
+  border-radius: 7px;
+  background: #ffffff;
+}
+
+body.student-panel .metric-card h3,
+body.student-panel .certificate-summary-card span,
+body.student-panel .opportunity-summary-card span {
+  color: #5a6478;
+  font-size: 10px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+body.student-panel .metric-value,
+body.student-panel .certificate-summary-card strong,
+body.student-panel .opportunity-summary-card strong {
+  color: #1e2535;
+  font-size: 24px;
+}
+
+body.student-panel .metric-card:first-child,
+body.student-panel .certificate-summary-card:first-child,
+body.student-panel .opportunity-summary-card:first-child {
+  border-left: 3px solid var(--student-orange);
+}
+
+body.student-panel #atividades > .card,
+body.student-panel .certificate-upload-card,
+body.student-panel .certificate-history-card,
+body.student-panel .opportunity-panel {
+  padding: 16px;
+}
+
+body.student-panel .activity-filters,
+body.student-panel .certificate-filters,
+body.student-panel .opportunity-filters {
+  padding: 8px;
+  gap: 6px;
+  background: #ffffff;
+}
+
+body.student-panel .activity-status-tabs button {
+  min-height: 30px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+body.student-panel .activity-status-tabs button.active {
+  background: var(--student-orange);
+  border-color: var(--student-orange);
+  color: #ffffff;
+}
+
+body.student-panel .student-activities-table-wrap,
+body.student-panel .student-certificates-table-wrap {
+  margin-top: 8px !important;
+  border-color: var(--student-border);
+  border-radius: 8px !important;
+  background: #ffffff;
+}
+
+body.student-panel .student-activities-table {
+  min-width: 1080px;
+}
+
+body.student-panel .student-activities-table th,
+body.student-panel .student-activities-table td,
+body.student-panel .student-certificate-table th,
+body.student-panel .student-certificate-table td {
+  padding: 8px 12px !important;
+  border-color: var(--student-border-soft);
+}
+
+body.student-panel .student-activities-table th,
+body.student-panel .student-certificate-table th {
+  height: 34px;
+  background: var(--student-page-bg);
+  color: #5a6478;
+  font-size: 9px;
+  letter-spacing: .04em;
+}
+
+body.student-panel .student-activities-table td,
+body.student-panel .student-certificate-table td {
+  color: #334155;
+  font-size: 12px;
+}
+
+body.student-panel .table-subtext {
+  color: #7b8496;
+  font-size: 11px;
+}
+
+body.student-panel .activity-material-btn,
+body.student-panel .student-activities-table .activity-material-btn.button.secondary,
+body.student-panel .student-activities-table .activity-material-btn.secondary.compact-button {
+  min-width: 74px;
+  min-height: 30px;
+  padding: 6px 12px;
+  border: 1px solid #185fa5;
+  border-radius: 5px;
+  background: #2563b0;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(37, 99, 176, .22);
+}
+
+body.student-panel .activity-material-btn:hover,
+body.student-panel .student-activities-table .activity-material-btn.button.secondary:hover,
+body.student-panel .student-activities-table .activity-material-btn.secondary.compact-button:hover {
+  background: #185fa5;
+  border-color: #0f4f8c;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(37, 99, 176, .28);
+}
+
+body.student-panel .activity-material-btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 176, .24);
+  outline-offset: 2px;
+}
+
+body.student-panel .submit-activity-btn,
+body.student-panel .certificate-select-button,
+body.student-panel .certificate-upload-card button[type="submit"],
+body.student-panel .opportunity-enroll {
+  background: var(--student-orange);
+  border-color: var(--student-orange);
+  color: #ffffff;
+}
+
+body.student-panel .details-activity-btn,
+body.student-panel .student-activities-table .compact-button[disabled] {
+  background: #ffffff;
+  color: #5a6478;
+  border-color: var(--student-border);
+  box-shadow: none;
+}
+
+body.student-panel .certificate-dropzone {
+  min-height: 126px;
+  border-style: dashed;
+  background: #ffffff;
+}
+
+body.student-panel .student-certificate-card {
+  gap: 10px;
+  padding: 12px;
+}
+
+body.student-panel .student-certificate-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  background: #fef0e6;
+  color: var(--student-orange);
+}
+
+@media (max-width: 1100px) {
+  body.student-panel .dashboard-hero .dashboard-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  body.student-panel .sidebar {
+    width: 100%;
+  }
+
+  body.student-panel .console-header,
+  body.student-panel .topbar {
+    min-height: auto;
+  }
+
+  body.student-panel .topbar {
+    padding: 12px;
+  }
+
+  body.student-panel .panel-section {
+    padding-inline: 12px;
+  }
+}
+
+body.student-panel .student-certificates-table-wrap {
+  max-height: 460px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.student-panel .student-certificate-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+body.student-panel .student-certificate-table th,
+body.student-panel .student-certificate-table td {
+  padding: 9px 8px !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  vertical-align: middle;
+}
+
+body.student-panel .student-certificate-table th:nth-child(1),
+body.student-panel .student-certificate-table td:nth-child(1) { width: 20%; }
+body.student-panel .student-certificate-table th:nth-child(2),
+body.student-panel .student-certificate-table td:nth-child(2) { width: 11%; }
+body.student-panel .student-certificate-table th:nth-child(3),
+body.student-panel .student-certificate-table td:nth-child(3) { width: 10%; }
+body.student-panel .student-certificate-table th:nth-child(4),
+body.student-panel .student-certificate-table td:nth-child(4) { width: 14%; }
+body.student-panel .student-certificate-table th:nth-child(5),
+body.student-panel .student-certificate-table td:nth-child(5) { width: 13%; }
+body.student-panel .student-certificate-table th:nth-child(6),
+body.student-panel .student-certificate-table td:nth-child(6) { width: 23%; }
+body.student-panel .student-certificate-table th:nth-child(7),
+body.student-panel .student-certificate-table td:nth-child(7) { width: 9%; text-align: center; }
+
+body.student-panel .student-certificate-table .badge,
+body.student-panel .student-certificate-table .compact-button {
+  white-space: nowrap;
+}
+
+/* Dashboard summaries stay compact even when the database has many categories. */
+.dashboard-table-card {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-width: 0;
+  max-height: 390px;
+}
+
+.dashboard-table-card .chart-head {
+  min-height: 58px;
+  margin-bottom: 10px;
+}
+
+.dashboard-summary-table-wrap {
+  max-height: 285px;
+  overflow: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+}
+
+.status-chart-card {
+  min-width: 0;
+  max-height: 390px;
+}
+
+.status-chart-box {
+  min-height: 285px !important;
+  max-height: 285px;
+}
+
+.approval-chart-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+}
+
+.approval-chart-scroll .chart-box {
+  min-width: 100%;
+}
+
+.approval-chart-scroll canvas {
+  min-height: 300px;
+}
+
+.dashboard-summary-table {
+  width: 100%;
+  min-width: 420px;
+}
+
+.dashboard-summary-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.dashboard-summary-table th,
+.dashboard-summary-table td {
+  padding: 10px 12px !important;
+  vertical-align: middle;
+}
+
+.dashboard-summary-table th:not(:first-child),
+.dashboard-summary-table td:not(:first-child) {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.category-hours-table td:first-child {
+  min-width: 190px;
+  max-width: 280px;
+  overflow-wrap: anywhere;
+}
+
+.category-hours-table .mini-progress {
+  width: 96px;
+  margin: 5px auto 0;
+}
+
+.category-hours-card {
+  max-height: 440px;
+}
+
+.category-hours-card .dashboard-summary-table-wrap {
+  max-height: 320px;
+  overflow-x: hidden;
+}
+
+.category-hours-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.category-hours-table th,
+.category-hours-table td {
+  white-space: normal !important;
+}
+
+.category-hours-table th:nth-child(1),
+.category-hours-table td:nth-child(1) { width: 42%; }
+.category-hours-table th:nth-child(2),
+.category-hours-table td:nth-child(2) { width: 16%; }
+.category-hours-table th:nth-child(3),
+.category-hours-table td:nth-child(3) { width: 24%; }
+.category-hours-table th:nth-child(4),
+.category-hours-table td:nth-child(4) { width: 18%; }
+
+/* Link history fits inside its card without horizontal scrolling. */
+.admin-links-history-table-wrap {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.admin-links-history-table {
+  width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+}
+
+.admin-links-history-table th,
+.admin-links-history-table td {
+  padding: 9px 8px !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  vertical-align: middle;
+}
+
+.admin-links-history-table th:nth-child(1),
+.admin-links-history-table td:nth-child(1) { width: 20%; }
+.admin-links-history-table th:nth-child(2),
+.admin-links-history-table td:nth-child(2) { width: 23%; }
+.admin-links-history-table th:nth-child(3),
+.admin-links-history-table td:nth-child(3) { width: 11%; }
+.admin-links-history-table th:nth-child(4),
+.admin-links-history-table td:nth-child(4) { width: 12%; }
+.admin-links-history-table th:nth-child(5),
+.admin-links-history-table td:nth-child(5) { width: 10%; }
+.admin-links-history-table th:nth-child(6),
+.admin-links-history-table td:nth-child(6) { width: 24%; }
+
+.admin-links-history-table .admin-link-table-user {
+  min-width: 0;
+  gap: 7px;
+}
+
+.admin-links-history-table .admin-link-table-user > div {
+  min-width: 0;
+}
+
+.admin-links-history-table .admin-link-table-user strong,
+.admin-links-history-table .table-subtext {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.admin-links-history-table .admin-user-role,
+.admin-links-history-table .badge {
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .dashboard-table-card {
+    max-height: 360px;
+  }
+
+  .dashboard-summary-table-wrap {
+    max-height: 260px;
+  }
+}
+
+body.student-panel .dashboard-shell,
+body.student-panel .certificate-workspace-stack,
+body.student-panel #atividades > .card,
+body.student-panel .opportunity-panel,
+body.student-panel .certificate-header { width: 100%; max-width: 1280px; }
+
+body.student-panel .card { border-color: var(--block-border); box-shadow: var(--shadow-xs); }
+body.student-panel .metric-card,
+body.student-panel .certificate-summary-card,
+body.student-panel .dashboard-action-card,
+body.student-panel .activity-card,
+body.student-panel .student-certificate-card,
+body.student-panel .activity-support-row,
+body.student-panel .student-certificate-meta div,
+body.student-panel .certificate-dropzone,
+body.student-panel .activity-filters,
+body.student-panel .certificate-filters { background: var(--surface-1); color: var(--text); }
+
+body.student-panel .activity-support-row,
+body.student-panel .student-certificate-meta div,
+body.student-panel .activity-filters,
+body.student-panel .certificate-filters { background: var(--surface-2); }
+
+html[data-theme="dark"], body.dark, body.dark-mode {
+  --bg-main: #070e19;
+  --bg-topbar: #0b1422;
+  --bg-card: #101a2a;
+  --surface-1: #101a2a;
+  --surface-2: #152237;
+  --surface-3: #1a2b45;
+  --chart-bg: #0d1726;
+  --block-border: rgba(249, 115, 22, .27);
+  --table-head-bg: #172b48;
+  --table-row-hover: rgba(249, 115, 22, .08);
+  --chart-grid: rgba(203, 213, 225, .13);
+}
+
+html[data-theme="dark"] .chart-box,
+body.dark .chart-box,
+body.dark-mode .chart-box,
+html[data-theme="dark"] .chart-box--donut,
+body.dark .chart-box--donut,
+body.dark-mode .chart-box--donut {
+  background: var(--chart-bg);
+  border-color: rgba(148, 163, 184, .18);
+}
+
+@media (max-width: 1180px) {
+  .admin-users-section #userForm, #alunos #studentForm { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  :root { --chart-height: 240px; }
+  .admin-users-section #userForm, #alunos #studentForm { grid-template-columns: 1fr; }
+  .admin-users-section #userForm > *, #alunos #studentForm > * { grid-column: 1 / -1 !important; }
+}
+
+/* Final table guardrails: preserve readable actions and use horizontal scrolling. */
+.admin-courses-active-table {
+  min-width: 1180px !important;
+  table-layout: auto !important;
+}
+
+.admin-courses-active-table th,
+.admin-courses-active-table td {
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+}
+
+.admin-courses-active-table th:nth-child(2),
+.admin-courses-active-table td:nth-child(2) {
+  min-width: 220px;
+  white-space: normal !important;
+}
+
+.admin-courses-active-table th:last-child,
+.admin-courses-active-table td:last-child,
+.admin-courses-table th:last-child,
+.admin-courses-table td:last-child {
+  min-width: 110px;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+.admin-courses-active-table .toggle-course-status,
+.admin-courses-table .toggle-course-status {
+  display: inline-flex;
+  width: auto;
+  min-width: 82px;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+body.student-panel .student-activities-table th:last-child,
+body.student-panel .student-activities-table td:last-child {
+  min-width: 210px;
+}

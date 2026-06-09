@@ -1,0 +1,152 @@
+/* =========================================================
+   SIGAC - CSS comentado: sigac.css
+   Objetivo: organizar estilos visuais desta parte do sistema.
+   Comentários são internos e não aparecem na interface do usuário.
+   ========================================================= */
+
+/* =========================================================
+   SIGAC - CSS principal organizado
+   Este arquivo foi mantido como ponto de entrada para preservar
+   os links existentes nos HTMLs. Os estilos foram separados na
+   pasta ./vendor/css/ sem alterar servidor, banco, .env, JS ou npm scripts.
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+@import url("./vendor/css/01-foundation.css");
+@import url("./vendor/css/02-login.css");
+@import url("./vendor/css/03-layout.css");
+@import url("./vendor/css/04-components-base.css");
+@import url("./vendor/css/05-grids.css");
+@import url("./vendor/css/06-dashboard.css");
+@import url("./vendor/css/07-forms.css");
+@import url("./vendor/css/08-buttons.css");
+@import url("./vendor/css/09-status-badges-messages.css");
+@import url("./vendor/css/10-tables.css");
+@import url("./vendor/css/11-charts.css");
+@import url("./vendor/css/12-page-aluno.css");
+@import url("./vendor/css/13-page-coordenador-admin.css");
+@import url("./vendor/css/14-notifications-audit-settings.css");
+@import url("./vendor/css/15-modal.css");
+@import url("./vendor/css/16-global-text-colors.css");
+@import url("./vendor/css/17-contrast-fixes.css");
+@import url("./vendor/css/18-responsive.css");
+/* ===== INÍCIO ADIÇÃO ML SIGAC: import do CSS do painel de Machine Learning ===== */
+@import url("./vendor/css/19-ml-dashboard.css");
+@import url("./vendor/css/19-mobile-inspired-pwa.css");
+@import url("./vendor/css/20-academic-management.css");
+@import url("./vendor/css/21-quality-pass.css?v=presentation-mode-2026-06-06");
+
+/* Custom UI standardization overrides */
+.certificate-list-container,
+.student-certificate-table-wrap {
+  max-height: 600px;
+  overflow-y: auto;
+  border-radius: var(--radius-sm);
+}
+
+.student-certificate-table {
+  min-width: 900px;
+}
+
+.coordinator-opportunities-table-wrap,
+.student-certificate-table-wrap {
+  overflow-x: auto;
+  background: transparent;
+  padding: 0;
+}
+
+.coordinator-opportunities-table,
+.student-certificate-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.coordinator-opportunities-table th,
+.coordinator-opportunities-table td,
+.student-certificate-table th,
+.student-certificate-table td {
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  vertical-align: top;
+}
+
+.coordinator-opportunities-table th,
+.student-certificate-table th {
+  text-align: left;
+  font-weight: 700;
+  color: #333;
+  background: rgba(255, 138, 31, 0.06);
+}
+
+.coordinator-opportunities-table tbody tr:hover,
+.student-certificate-table tbody tr:hover {
+  background: rgba(255, 138, 31, 0.05);
+}
+
+.table-actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.student-certificate-table td .small,
+.coordinator-opportunities-table td .small {
+  display: block;
+  margin-top: 0.5rem;
+  color: rgba(0, 0, 0, 0.58);
+}
+
+.student-certificate-row {
+  transition: background 0.2s ease;
+}
+
+.student-certificate-row.accent-card--green td {
+  border-color: rgba(25, 150, 75, 0.16);
+}
+
+.student-certificate-row.accent-card--danger td {
+  border-color: rgba(209, 42, 42, 0.16);
+}
+
+.student-certificate-row.accent-card--warning td {
+  border-color: rgba(255, 158, 0, 0.16);
+}
+
+.opportunity-empty,
+.certificate-empty-state {
+  min-height: 220px;
+}
+
+.coordinator-opportunity-empty,
+.certificate-empty-state {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+.coordinator-opportunity-empty h3,
+.certificate-empty-state h3 {
+  margin-top: 0.5rem;
+}
+
+.coordinator-opportunity-empty p,
+.certificate-empty-state p {
+  max-width: 42rem;
+}
+
+.login-course-options {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+}
+
+.login-course-option {
+  justify-content: flex-start;
+  width: 100%;
+  text-align: left;
+}
+
+/* ===== FIM ADIÇÃO ML SIGAC: import do CSS do painel de Machine Learning ===== */

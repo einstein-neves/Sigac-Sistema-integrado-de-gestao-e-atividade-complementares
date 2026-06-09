@@ -1,0 +1,451 @@
+﻿DOCUMENTAÇÃO GERAL DO SIGAC
+Sistema Integrado de Gestão de Atividades Complementares
+Versão sugerida: SIGAC Web/PWA v5.0.0-beta
+
+1. OBJETIVO DESTE ARQUIVO
+
+Este arquivo substitui os antigos arquivos separados do tipo LEIA_*. Ele concentra, em um único lugar, as informações essenciais para execução, organização, correções visuais, comentários internos, ML, API, banco de dados e próximos passos do SIGAC.
+
+Os comentários inseridos no código são internos. Eles servem para orientar os integrantes que abrirem o projeto no VS Code ou no GitHub. Eles não aparecem visualmente para o usuário final do sistema.
+
+2. COMO RODAR O SIGAC WEB/PWA
+
+Na raiz do projeto, onde ficam server.js, db.js e package.json, execute:
+
+npm install
+npm start
+
+Ou, se existir package-lock.json e o professor pedir instalação limpa:
+
+npm ci
+npm start
+
+Acesse no navegador:
+
+http://127.0.0.1:3000
+
+ou:
+
+http://localhost:3000
+
+3. CONFIGURAÇÃO DO .ENV
+
+O SIGAC usa PostgreSQL. O arquivo db.js exige a variável DATABASE_URL.
+
+Crie um arquivo chamado .env na raiz do projeto com uma linha semelhante a:
+
+DATABASE_URL=postgresql://USUARIO:SENHA@HOST:PORTA/NOME_DO_BANCO?sslmode=require
+PORT=3000
+
+Observações:
+- O arquivo .env não deve ser enviado para GitHub ou para pessoas fora do grupo.
+- Se o erro "Defina a variavel de ambiente DATABASE_URL" aparecer, o .env está ausente ou a variável está incorreta.
+- Se aparecer erro de módulo faltando, rode npm install ou npm ci.
+
+4. PRINCIPAIS PASTAS DO PROJETO
+
+adminsigac.html
+Tela principal do Superadmin/Admin.
+
+coordenador.html
+Tela do Coordenador.
+
+index.html
+Tela do Aluno/PWA.
+
+js/
+Scripts JavaScript do front-end. Controlam ações de tela, chamadas fetch, tema, login, OCR, dashboard e interações.
+
+vendor/css/
+Arquivos CSS organizados por partes da interface.
+
+sigac.css
+Arquivo central que importa os CSS modulares.
+
+server.js
+Back-end Node.js/Express. Deve conter rotas HTTP/API do SIGAC.
+
+db.js
+Configuração de conexão com PostgreSQL usando DATABASE_URL.
+
+ml/
+Módulo de Machine Learning/Data Science.
+
+5. ORGANIZAÇÃO DO ML ATUAL
+
+O ML atual funciona com este fluxo:
+
+data/raw
+→ scripts/limpar_dados.py
+→ data/processed/dataset_limpo.csv
+→ scripts/gerar_relatorio_ml.py
+→ reports/resumo_executivo.txt e reports/resumo_metricas.csv
+→ scripts/treinar_modelo.py
+→ reports/risco_alunos.csv e models/modelo_risco_aluno.json
+
+Scripts principais:
+
+ml/scripts/exportar_dados_api.py
+Gera ou exporta dados brutos simulados para data/raw/certificados_simulados.csv.
+
+ml/scripts/limpar_dados.py
+Padroniza os dados brutos, ajustando status, curso, categoria, carga horária e meta. Gera data/processed/dataset_limpo.csv.
+
+ml/scripts/gerar_relatorio_ml.py
+Gera relatórios de métricas, incluindo total de registros, aprovados, rejeitados, em análise e taxa de aprovação.
+
+ml/scripts/treinar_modelo.py
+Classifica risco dos alunos e gera reports/risco_alunos.csv e models/modelo_risco_aluno.json.
+
+6. COMANDOS DO ML LOCAL
+
+Entre na pasta ml:
+
+cd ml
+
+Instale as dependências Python:
+
+python -m pip install -r requirements.txt
+
+Valide a sintaxe dos scripts:
+
+python -m py_compile .\scripts\exportar_dados_api.py .\scripts\limpar_dados.py .\scripts\gerar_relatorio_ml.py .\scripts\treinar_modelo.py
+
+Rode o pipeline completo:
+
+python .\scripts\exportar_dados_api.py
+python .\scripts\limpar_dados.py
+python .\scripts\gerar_relatorio_ml.py
+python .\scripts\treinar_modelo.py
+
+Confira os resultados:
+
+Get-Content .\reports\resumo_executivo.txt -Encoding UTF8
+Get-Content .\reports\risco_alunos.csv -Encoding UTF8
+
+Volte para a raiz:
+
+cd ..
+
+7. RESULTADOS ESPERADOS DO ML LOCAL
+
+Arquivos esperados:
+
+ml/data/raw/certificados_simulados.csv
+ml/data/processed/dataset_limpo.csv
+ml/data/exports/resumo_por_status.csv
+ml/reports/resumo_executivo.txt
+ml/reports/resumo_metricas.csv
+ml/reports/risco_alunos.csv
+ml/models/modelo_risco_aluno.json
+
+Exemplo de resumo esperado:
+
+Total de registros: 30
+Aprovados: 13
+Rejeitados: 10
+Em análise: 7
+Taxa de aprovação: 43.33%
+
+8. ERROS COMUNS E CORREÇÕES
+
+Erro: Cannot find module 'nodemailer'
+Causa: dependências Node ausentes.
+Correção:
+
+npm install
+
+ou:
+
+npm ci
+
+Erro: Defina a variavel de ambiente DATABASE_URL
+Causa: .env ausente ou DATABASE_URL não definida.
+Correção: criar .env na raiz com DATABASE_URL correta.
+
+Erro: No such file requirements/requerements
+Causa: nome digitado errado.
+Correto:
+
+requirements.txt
+
+Erro: script/exportar_dados_api.py não encontrado
+Causa: pasta digitada errado.
+Correto:
+
+scripts/exportar_dados_api.py
+
+Erro: exporta_dados_api.py não encontrado
+Causa: nome do arquivo incompleto.
+Correto:
+
+exportar_dados_api.py
+
+Erro: data/export não existe
+Causa: pasta correta é exports.
+Correto:
+
+data/exports
+
+Erro de acentuação no PowerShell
+Correção:
+
+Get-Content arquivo.txt -Encoding UTF8
+
+9. COMENTÁRIOS NO CÓDIGO
+
+Foram adicionados comentários pequenos nos principais arquivos para orientar a equipe.
+
+HTML usa:
+
+<!-- Comentário -->
+
+CSS usa:
+
+/* Comentário */
+
+JavaScript usa:
+
+// Comentário
+
+Python usa:
+
+# Comentário
+
+SQL usa:
+
+-- Comentário
+
+Esses comentários não aparecem visualmente para o usuário final. Eles servem para facilitar manutenção, apresentação técnica e divisão de responsabilidades.
+
+10. CORREÇÕES VISUAIS E ORGANIZAÇÃO DA INTERFACE
+
+Foram aplicados ajustes visuais para melhorar legibilidade, contraste e apresentação:
+
+- sidebar com melhor contraste;
+- botões mais legíveis;
+- cards mais organizados;
+- tabelas mais claras;
+- blocos de dashboard mais consistentes;
+- ajustes nos cards de ML;
+- comentários internos para identificar seções grandes.
+
+O arquivo CSS principal continua sendo sigac.css, que importa os arquivos de vendor/css/.
+
+11. INTEGRAÇÃO DO ML COM O SIGAC VIA API E BANCO
+
+O professor solicitou que o ML não fique apenas no terminal. O resultado precisa aparecer no sistema e ser salvo no PostgreSQL.
+
+Arquitetura esperada:
+
+Front-end/Dashboard
+→ API Node.js/Express
+→ Scripts Python do ML
+→ Tabelas de insights/análises no PostgreSQL
+→ API consulta resultados
+→ Dashboard exibe para usuário
+
+O front-end não deve calcular insights. Ele deve apenas consumir a API.
+
+12. TABELAS RECOMENDADAS PARA O BANCO
+
+Tabela de execuções da pipeline:
+
+ml_pipeline_execucoes
+- id
+- nome_pipeline
+- status_execucao
+- inicio_execucao
+- fim_execucao
+- quantidade_registros_processados
+- mensagem
+
+Tabela de insights:
+
+ml_insights
+- id
+- perfil_destino
+- referencia_tipo
+- referencia_id
+- tipo_insight
+- titulo
+- descricao
+- nivel_alerta
+- valor_numerico
+- data_geracao
+
+Tabela de recomendações:
+
+ml_recomendacoes
+- id
+- perfil_destino
+- referencia_id
+- titulo
+- recomendacao
+- motivo
+- prioridade
+- data_geracao
+
+Tabela de classificação de risco:
+
+ml_classificacao_risco
+- id
+- aluno_id
+- curso_id
+- percentual_conclusao
+- submissoes_pendentes
+- submissoes_rejeitadas
+- dias_sem_submeter
+- nivel_risco
+- justificativa
+- data_calculo
+
+13. ROTAS DE API RECOMENDADAS
+
+POST /api/ml/executar
+Executa a pipeline Python e salva resultados no banco.
+
+GET /api/dashboard/aluno/:id
+Retorna dados inteligentes do aluno.
+
+GET /api/dashboard/coordenador/:id
+Retorna dados inteligentes para coordenador.
+
+GET /api/dashboard/superadmin
+Retorna visão geral institucional.
+
+GET /api/insights/aluno/:id
+Retorna insights do aluno.
+
+GET /api/insights/curso/:id
+Retorna insights do curso.
+
+GET /api/recomendacoes/aluno/:id
+Retorna recomendações automáticas para aluno.
+
+GET /api/riscos/alunos
+Retorna classificação de risco dos alunos.
+
+14. O QUE DEVE APARECER NO DASHBOARD
+
+Aluno:
+- horas exigidas;
+- horas aprovadas;
+- percentual de conclusão;
+- pendências;
+- rejeições;
+- risco baixo, médio ou alto;
+- recomendações;
+- insights.
+
+Coordenador:
+- pendências por curso;
+- taxa de aprovação;
+- taxa de rejeição;
+- categorias com mais rejeição;
+- alunos em risco;
+- submissões prioritárias;
+- insights automáticos.
+
+Superadmin:
+- total de cursos monitorados;
+- total de alunos ativos;
+- total de submissões;
+- comparação entre cursos;
+- cursos críticos;
+- categorias mais usadas;
+- tempo médio geral de validação;
+- insights institucionais.
+
+15. BOTÃO DE ATUALIZAR ML
+
+O botão deve ficar no dashboard do Admin/Superadmin e também pode aparecer no Coordenador.
+
+Sugestão de texto:
+
+Atualizar análise ML
+Gerar insights agora
+Atualizar visualização
+
+Comportamento esperado:
+
+Usuário clica no botão
+→ front chama POST /api/ml/executar
+→ back executa pipeline
+→ banco recebe resultados
+→ front chama GET das rotas de dashboard
+→ tela atualiza dados.
+
+16. DIVISÃO DE RESPONSABILIDADES
+
+Einstein:
+- manter limpeza dos dados;
+- manter métricas e relatórios;
+- validar dataset_limpo.csv;
+- ajudar no front do card de ML;
+- documentar execução e erros.
+
+Hilccer:
+- manter classificação de risco;
+- ajustar regra de risco conforme critérios do professor;
+- gerar risco_alunos.csv/modelo_risco_aluno.json;
+- ajudar a adaptar classificar_risco.py.
+
+Arthur:
+- criar tabelas no PostgreSQL;
+- criar rotas no Node/Express;
+- salvar resultados do ML no banco;
+- conectar dashboard com API;
+- garantir que o sistema em produção leia os dados do banco.
+
+Guilherme:
+- apoiar telas, responsividade e dashboard;
+- conferir visual no PWA/mobile;
+- testar se os dados aparecem corretamente.
+
+17. CRITÉRIOS MÍNIMOS DO PROFESSOR VICTOR
+
+O projeto precisa demonstrar:
+
+- PostgreSQL funcionando;
+- Back-end Node/Express;
+- Front-end conectado;
+- Scripts Python;
+- tabelas de insights/análises;
+- dashboards por perfil;
+- regras de recomendação;
+- classificação de risco;
+- documentação;
+- API retornando dados;
+- resultados salvos no banco.
+
+18. O QUE AINDA FALTA PARA A ENTREGA FINAL
+
+- Criar tabelas definitivas no PostgreSQL.
+- Criar scripts adicionais: gerar_insights.py, gerar_recomendacoes.py, classificar_risco.py e executar_pipeline.py.
+- Adaptar scripts para salvar no banco, não apenas em CSV/JSON.
+- Criar rotas API para dashboards, insights, recomendações e riscos.
+- Fazer o botão do dashboard chamar a API.
+- Exibir resultados no dashboard do Aluno, Coordenador e Superadmin.
+- Atualizar documentação final com prints e exemplos de retorno da API.
+
+19. LIMPEZA ANTES DE ENVIAR
+
+Antes da entrega, remover:
+
+node_modules
+.venv
+__pycache__
+.env
+arquivos temporários
+caches
+
+Comando para remover __pycache__ dentro do projeto:
+
+Get-ChildItem -Recurse -Directory -Filter "__pycache__" | Remove-Item -Recurse -Force
+
+20. CONCLUSÃO
+
+O SIGAC já possui estrutura funcional de front-end, back-end, banco e ML local. A próxima evolução é integrar o ML ao sistema por meio de API e PostgreSQL, para que os resultados apareçam nos dashboards e sejam salvos com histórico.
+
+Este arquivo deve ser mantido como documentação geral do projeto, substituindo os antigos arquivos separados LEIA_*.

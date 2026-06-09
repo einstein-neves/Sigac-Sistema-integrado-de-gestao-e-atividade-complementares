@@ -1,0 +1,248 @@
+/* =========================================================
+   SIGAC - CSS comentado: 12-page-aluno.css
+   Objetivo: organizar estilos visuais desta parte do sistema.
+   Comentários são internos e não aparecem na interface do usuário.
+   ========================================================= */
+
+/* Aluno */
+.activity-card {
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.activity-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.activity-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.activity-card-heading {
+  flex: 1;
+}
+
+.activity-card-heading h4 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.activity-card-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.activity-status {
+  flex-shrink: 0;
+}
+
+.activity-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.activity-meta-card {
+  padding: 10px 12px !important;
+  min-height: 60px !important;
+}
+
+.activity-support-row {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.activity-support {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.activity-latest {
+  margin: 0;
+  color: var(--muted);
+}
+
+.activity-actions {
+  gap: 8px;
+}
+
+.activity-meta-card,
+.certificate-meta-card,
+.coordinator-student-meta-card,
+.coordinator-certificate-meta-card,
+.coordinator-submission-meta-card,
+.coordinator-opportunity-meta-card,
+.coordinator-rule-meta-card,
+.admin-report-metric-card,
+.admin-submission-priority,
+.admin-certificate-priority,
+.admin-link-step,
+.summary-stat,
+.certificate-summary-card,
+.opportunity-summary-card,
+.dashboard-kpi-card {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  min-height: 78px;
+  padding: 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.activity-meta-card span,
+.certificate-meta-card span,
+.coordinator-student-meta-card span,
+.coordinator-certificate-meta-card span,
+.coordinator-submission-meta-card span,
+.coordinator-opportunity-meta-card span,
+.coordinator-rule-meta-card span,
+.admin-report-metric-card span,
+.summary-stat span,
+.certificate-summary-card span,
+.opportunity-summary-card span,
+.dashboard-kpi-card span,
+.admin-submission-priority span,
+.admin-certificate-priority span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.activity-meta-card strong,
+.certificate-meta-card strong,
+.coordinator-student-meta-card strong,
+.coordinator-certificate-meta-card strong,
+.coordinator-submission-meta-card strong,
+.coordinator-opportunity-meta-card strong,
+
+.dashboard-kpi-card strong, /* correção de cor*/
+.coordinator-rule-meta-card strong,
+
+.admin-report-metric-card strong,
+.admin-submission-priority strong,
+.admin-certificate-priority strong {
+  color: var(--heading);
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.certificate-dropzone {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  min-height: 180px;
+  padding: 22px;
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface-2);
+  color: var(--muted);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.certificate-dropzone.is-dragging {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  box-shadow: 0 0 0 4px rgba(204, 70, 10, .12);
+}
+
+.certificate-dropzone input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.certificate-select-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.certificate-dropzone-icon,
+.activity-empty-icon,
+.opportunity-empty-icon,
+.certificate-empty-icon,
+.coordinator-student-empty-icon,
+.coordinator-certificate-empty-icon,
+.coordinator-rule-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.certificate-file-name {
+  color: var(--muted-2);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.activity-empty-state,
+.opportunity-empty,
+.certificate-empty-state,
+.admin-courses-empty,
+.admin-rules-empty,
+.admin-opportunities-empty,
+.admin-certificates-empty,
+.admin-submissions-empty,
+.admin-reports-empty,
+.admin-notifications-empty,
+.coordinator-student-empty,
+.coordinator-certificate-empty,
+.coordinator-rule-empty,
+.coordinator-submission-empty {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 28px 20px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface-2);
+  color: var(--muted);
+  text-align: center;
+}
+
+
+/* ALUNO - Texto "Progresso da meta" dentro do banner azul */
+.dashboard-hero .progress-label,
+.dashboard-hero .progress-title,
+.dashboard-hero .dashboard-progress-title,
+.dashboard-hero .goal-progress-title {
+  color: #ffffff !important;
+}

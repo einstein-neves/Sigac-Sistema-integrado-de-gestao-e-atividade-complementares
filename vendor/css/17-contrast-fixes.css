@@ -1,0 +1,343 @@
+/* =========================================================
+   SIGAC - CSS comentado: 17-contrast-fixes.css
+   Objetivo: organizar estilos visuais desta parte do sistema.
+   Comentários são internos e não aparecem na interface do usuário.
+   ========================================================= */
+
+/* Correções específicas de contraste */
+.header-button.light,
+.console-header .header-button.light {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-on-orange);
+}
+
+.header-button.light:hover,
+.console-header .header-button.light:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: var(--text-on-orange);
+}
+
+.card.danger,
+.metric-card.danger {
+  background: var(--danger-soft);
+  color: var(--danger-text);
+  border-color: var(--danger-border);
+}
+
+.card.attention,
+.metric-card.attention {
+  background: var(--warning-soft);
+  color: var(--warning-text);
+  border-color: var(--warning-border);
+}
+
+.card.danger h3,
+.metric-card.danger h3,
+.card.attention h3,
+.metric-card.attention h3 {
+  color: inherit;
+}
+
+.status-pill {
+  background: var(--info-bg);
+  border-color: var(--info-border);
+  color: var(--info-text);
+}
+
+.console-header .status-pill {
+  background: var(--blue-100);
+  color: var(--blue-800);
+}
+
+html[data-theme="dark"] .console-header .status-pill,
+body.dark .console-header .status-pill,
+body.dark-mode .console-header .status-pill {
+  background: var(--info-bg);
+  color: var(--info-text);
+}
+
+/* Dark mode: polimento visual sem afetar o tema claro */
+html[data-theme="dark"],
+body.dark,
+body.dark-mode,
+.dark-mode {
+  --bg-main: #08111f;
+  --bg-topbar: #0d1728;
+  --bg-card: #111c2f;
+  --bg-card-soft: #16243a;
+  --bg-elevated: #18263d;
+  --surface-1: #111c2f;
+  --surface-2: #16243a;
+  --surface-3: #1d2e49;
+  --surface-hover: #1b2b45;
+  --text: #edf4fb;
+  --text-main: #edf4fb;
+  --heading: #ffffff;
+  --muted: #b7c4d6;
+  --muted-2: #d7e0ea;
+  --muted-3: #91a2b8;
+  --border-subtle: rgba(148, 163, 184, .16);
+  --border: rgba(148, 163, 184, .24);
+  --border-strong: rgba(203, 213, 225, .34);
+  --input-bg: #0b1627;
+  --input-bg-hover: #111e32;
+  --input-border: rgba(148, 163, 184, .30);
+  --table-head-bg: rgba(37, 99, 235, .20);
+  --table-head-text: #c7ddff;
+  --table-row-hover: rgba(37, 99, 235, .14);
+  --success-bg: rgba(34, 197, 94, .16);
+  --success-soft: rgba(34, 197, 94, .10);
+  --warning-bg: rgba(245, 158, 11, .17);
+  --warning-soft: rgba(245, 158, 11, .10);
+  --danger-bg: rgba(239, 68, 68, .17);
+  --danger-soft: rgba(239, 68, 68, .10);
+  --info-bg: rgba(96, 165, 250, .15);
+  --info-soft: rgba(96, 165, 250, .09);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, .34);
+  --shadow: 0 14px 34px rgba(0, 0, 0, .30);
+}
+
+html[data-theme="dark"] body,
+body.dark,
+body.dark-mode {
+  /* cleaned background: subtle layered tones for depth without color noise */
+  background: linear-gradient(180deg, rgba(10,18,28,0.85) 0%, var(--bg-main) 40%, rgba(4,8,16,1) 100%);
+  color: var(--text);
+}
+
+html[data-theme="dark"] .main,
+body.dark .main,
+body.dark-mode .main {
+  background: transparent;
+}
+
+html[data-theme="dark"] .console-header,
+body.dark .console-header,
+body.dark-mode .console-header {
+  background: rgba(12, 18, 28, 0.86);
+  border-bottom-color: rgba(255,255,255,0.04);
+  box-shadow: 0 8px 20px rgba(2,6,18,0.45);
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .metric-card,
+html[data-theme="dark"] .ml-dashboard-card,
+html[data-theme="dark"] .admin-certificate-card,
+html[data-theme="dark"] .coordinator-certificate-card,
+html[data-theme="dark"] .certificate-history-item,
+body.dark .card,
+body.dark .metric-card,
+body.dark .ml-dashboard-card,
+body.dark .admin-certificate-card,
+body.dark .coordinator-certificate-card,
+body.dark .certificate-history-item,
+body.dark-mode .card,
+body.dark-mode .metric-card,
+body.dark-mode .ml-dashboard-card,
+body.dark-mode .admin-certificate-card,
+body.dark-mode .coordinator-certificate-card,
+body.dark-mode .certificate-history-item {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .025), rgba(255, 255, 255, 0) 54%), var(--bg-card);
+  border-color: var(--border);
+  box-shadow: var(--shadow-xs);
+}
+
+html[data-theme="dark"] .dashboard-toolbar,
+html[data-theme="dark"] .admin-users-filters,
+html[data-theme="dark"] .admin-certificates-toolbar,
+html[data-theme="dark"] .coordinator-certificates-toolbar,
+html[data-theme="dark"] .admin-submissions-filters,
+html[data-theme="dark"] .coordinator-student-filters,
+html[data-theme="dark"] .coordinator-activities-filters,
+body.dark .dashboard-toolbar,
+body.dark .admin-users-filters,
+body.dark .admin-certificates-toolbar,
+body.dark .coordinator-certificates-toolbar,
+body.dark .admin-submissions-filters,
+body.dark .coordinator-student-filters,
+body.dark .coordinator-activities-filters,
+body.dark-mode .dashboard-toolbar,
+body.dark-mode .admin-users-filters,
+body.dark-mode .admin-certificates-toolbar,
+body.dark-mode .coordinator-certificates-toolbar,
+body.dark-mode .admin-submissions-filters,
+body.dark-mode .coordinator-student-filters,
+body.dark-mode .coordinator-activities-filters {
+  background: rgba(17, 28, 47, .78);
+  border-color: var(--border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .025);
+}
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] .custom-select-trigger,
+body.dark input,
+body.dark select,
+body.dark textarea,
+body.dark .custom-select-trigger,
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode .custom-select-trigger {
+  background: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text);
+}
+
+html[data-theme="dark"] input:hover,
+html[data-theme="dark"] select:hover,
+html[data-theme="dark"] textarea:hover,
+html[data-theme="dark"] .custom-select-trigger:hover,
+body.dark input:hover,
+body.dark select:hover,
+body.dark textarea:hover,
+body.dark .custom-select-trigger:hover,
+body.dark-mode input:hover,
+body.dark-mode select:hover,
+body.dark-mode textarea:hover,
+body.dark-mode .custom-select-trigger:hover {
+  background: var(--input-bg-hover);
+  border-color: var(--border-strong);
+}
+
+html[data-theme="dark"] .custom-select-menu,
+body.dark .custom-select-menu,
+body.dark-mode .custom-select-menu {
+  background: #0f1b2e;
+  border-color: var(--border-strong);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .42);
+}
+
+html[data-theme="dark"] .custom-select-option:hover,
+html[data-theme="dark"] .custom-select-option:focus-visible,
+body.dark .custom-select-option:hover,
+body.dark .custom-select-option:focus-visible,
+body.dark-mode .custom-select-option:hover,
+body.dark-mode .custom-select-option:focus-visible {
+  background: rgba(249, 115, 22, .13);
+}
+
+html[data-theme="dark"] th,
+body.dark th,
+body.dark-mode th {
+  background: var(--table-head-bg);
+  color: var(--table-head-text);
+}
+
+html[data-theme="dark"] tr:hover td,
+body.dark tr:hover td,
+body.dark-mode tr:hover td {
+  background: var(--table-row-hover);
+}
+
+html[data-theme="dark"] .alert-strip,
+body.dark .alert-strip,
+body.dark-mode .alert-strip {
+  background: rgba(15, 27, 46, .90);
+  border-color: rgba(147, 197, 253, .24);
+}
+
+html[data-theme="dark"] .alert-strip strong,
+body.dark .alert-strip strong,
+body.dark-mode .alert-strip strong {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .card.danger,
+html[data-theme="dark"] .metric-card.danger,
+body.dark .card.danger,
+body.dark .metric-card.danger,
+body.dark-mode .card.danger,
+body.dark-mode .metric-card.danger {
+  background: linear-gradient(180deg, rgba(239, 68, 68, .13), rgba(239, 68, 68, .05)), var(--bg-card);
+  color: #fecaca;
+}
+
+html[data-theme="dark"] .card.attention,
+html[data-theme="dark"] .metric-card.attention,
+body.dark .card.attention,
+body.dark .metric-card.attention,
+body.dark-mode .card.attention,
+body.dark-mode .metric-card.attention {
+  background: linear-gradient(180deg, rgba(245, 158, 11, .13), rgba(245, 158, 11, .05)), var(--bg-card);
+  color: #fde68a;
+}
+
+html[data-theme="dark"] .ocr-decision-panel,
+html[data-theme="dark"] .ocr-compare > div,
+body.dark .ocr-decision-panel,
+body.dark .ocr-compare > div,
+body.dark-mode .ocr-decision-panel,
+body.dark-mode .ocr-compare > div {
+  background: rgba(11, 22, 39, .74);
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .ocr-decision-panel.is-rejected,
+body.dark .ocr-decision-panel.is-rejected,
+body.dark-mode .ocr-decision-panel.is-rejected {
+  background: rgba(127, 29, 29, .22);
+  border-color: rgba(248, 113, 113, .34);
+}
+
+html[data-theme="dark"] .ocr-decision-panel.is-approved,
+body.dark .ocr-decision-panel.is-approved,
+body.dark-mode .ocr-decision-panel.is-approved {
+  background: rgba(20, 83, 45, .22);
+  border-color: rgba(74, 222, 128, .34);
+}
+
+html[data-theme="dark"] .sidebar,
+body.dark .sidebar,
+body.dark-mode .sidebar {
+  background: linear-gradient(180deg, #091525 0%, #0c1b2d 100%);
+  border-right-color: rgba(148, 163, 184, .18);
+}
+
+html[data-theme="dark"] .modal-content,
+html[data-theme="dark"] .table-wrap,
+html[data-theme="dark"] .chart-box,
+body.dark .modal-content,
+body.dark .table-wrap,
+body.dark .chart-box,
+body.dark-mode .modal-content,
+body.dark-mode .table-wrap,
+body.dark-mode .chart-box {
+  background: var(--bg-card);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+html[data-theme="dark"] td,
+body.dark td,
+body.dark-mode td {
+  color: var(--text);
+  border-bottom-color: var(--border-subtle);
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder,
+body.dark input::placeholder,
+body.dark textarea::placeholder,
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: var(--muted-3);
+  opacity: 1;
+}
+
+/* correção do progresso de meta  do index aluno */
+
+/* ALUNO - Título "Progresso da meta" dentro do banner azul */
+.dashboard-hero .dashboard-progress-head h3 {
+  color: #ffffff !important;
+}
+
+/* ALUNO - Badge de horas restantes dentro do banner azul */
+.dashboard-hero .dashboard-progress-head .badge {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}

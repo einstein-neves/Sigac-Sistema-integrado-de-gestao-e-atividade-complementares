@@ -1,0 +1,9 @@
+# Dependencias sugeridas para a parte de ML/Data Science do SIGAC
+# Instalar dentro da pasta ml com: pip install -r requirements.txt
+pandas
+numpy
+matplotlib
+scikit-learn
+joblib
+requests
+python-dotenv

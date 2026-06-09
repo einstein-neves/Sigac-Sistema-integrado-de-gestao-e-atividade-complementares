@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- SIGAC - Arquivo HTML comentado para orientar a equipe na manutenção do código. -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGAC - Redefinir senha</title>
+  <link rel="icon" type="image/png" href="Logo SIGAC-otimizada.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="SIGAC">
+  <link rel="stylesheet" href="sigac.css?v=matricula-sem-token-2026-05-08">
+</head>
+<body>
+  <div class="container-login">
+    <div class="login-card">
+      <div class="login-brand">
+        <img src="Logo SIGAC-otimizada.png" alt="Logo SIGAC">
+        <div>
+          <h1>Definir senha definitiva</h1>
+          <p>Use a senha temporária apenas para entrar uma vez. Depois cadastre sua senha definitiva com segurança.</p>
+        </div>
+      </div>
+
+      <div class="message info" id="resetIntroMessage">
+        Esta tela é usada somente depois que o usuário entra com uma senha temporária gerada pelo administrador ou coordenador.
+        Se você esqueceu sua senha, solicite a redefinição para a administração do SIGAC.
+      </div>
+
+      <form id="resetForm">
+        <div class="field">
+          <label for="senha">Nova senha definitiva</label>
+          <input id="senha" type="password" minlength="8" required placeholder="Crie uma senha com pelo menos 8 caracteres">
+        </div>
+
+        <div class="field">
+          <label for="confirmarSenha">Confirmar nova senha</label>
+          <input id="confirmarSenha" type="password" minlength="8" required placeholder="Digite a mesma senha novamente">
+        </div>
+
+        <div class="actions-row">
+          <button type="submit">Salvar senha definitiva</button>
+          <a class="button secondary" href="loginsigac.html">Voltar ao login</a>
+        </div>
+      </form>
+
+      <div id="resetMessage" class="message info hidden"></div>
+    </div>
+  </div>
+
+  
+<!-- SCRIPTS - Arquivos JavaScript responsáveis por comportamento, API e interação da tela. -->
+<script src="js/data.js"></script>
+  <script src="js/reset.js?v=senha-temporaria-sem-token-2026-05-08"></script>
+  <script src="js/custom-select.js"></script>
+  <script src="js/pwa.js"></script>
+</body>
+</html>

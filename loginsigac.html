@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- SIGAC - Arquivo HTML comentado para orientar a equipe na manutenção do código. -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGAC - Login</title>
+  <link rel="icon" type="image/png" href="Logo SIGAC-otimizada.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f97316">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="SIGAC">
+  <script>(function(){try{document.documentElement.dataset.theme=localStorage.getItem('sigac-theme')||'light';}catch(e){document.documentElement.dataset.theme='light';}})();</script>
+  <link rel="stylesheet" href="sigac.css?v=matricula-sem-token-2026-05-08">
+</head>
+<body>
+  <div class="container-login">
+    <div class="login-card">
+      <div class="login-hero">
+        <div class="login-brand">
+          <img src="Logo SIGAC-otimizada.png" alt="Logo SIGAC">
+          <div>
+            <h1>SIGAC</h1>
+            <p>Sistema Integrado de Gest&atilde;o de Atividades Complementares</p>
+          </div>
+        </div>
+
+        <div class="login-hero-copy">
+          <span class="login-kicker">Portal acadêmico</span>
+          <h2>Controle atividades, certificados e oportunidades em um único lugar.</h2>
+          <p>Um acesso rápido para acompanhar validações, pendências e próximas ações sem mudar a lógica atual do sistema.</p>
+        </div>
+
+        <div class="login-hero-footer">
+          <span>Ambiente acadêmico</span>
+          <strong>2026</strong>
+        </div>
+      </div>
+
+      <div class="login-auth">
+        <section id="loginPanel" class="auth-panel login-panel-surface">
+          <div class="login-form-heading">
+            <span class="login-kicker">Acesso seguro</span>
+            <h2>Entrar no SIGAC Faculdade</h2>
+            <p>Use seu e-mail institucional, escolha o perfil correto e acompanhe sua vida academica em um painel unico.</p>
+          </div>
+          <form id="loginForm">
+            <div class="field">
+              <label for="loginRole">Fun&ccedil;&atilde;o</label>
+              <select id="loginRole" required>
+                <option value="aluno">Aluno (Gradua&ccedil;&atilde;o e P&oacute;s)</option>
+                <option value="coordenador">Coordenador</option>
+                <option value="superadmin">Administrador</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" placeholder="Digite seu e-mail" required>
+            </div>
+
+            <div class="field">
+              <div class="field-heading">
+                <label for="senha">Senha</label>
+                <div class="password-actions">
+                  <a href="esqueci-senha.html">Esqueci minha senha</a>
+                </div>
+              </div>
+              <input id="senha" type="password" placeholder="Digite sua senha" required>
+            </div>
+
+            <button type="submit" class="btn-login">Entrar</button>
+          </form>
+
+          <div id="loginMessage" class="message info hidden"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- SCRIPTS - Arquivos JavaScript responsáveis por comportamento, API e interação da tela. -->
+<script src="js/data.js"></script>
+  <script src="js/login.js?v=ui-refino-2026-04-26-login"></script>
+  <script src="js/academic-management.js?v=faculdade-avancada-2026-06-04"></script>
+  <script src="js/custom-select.js"></script>
+  <script src="js/pwa.js"></script>
+</body>
+</html>

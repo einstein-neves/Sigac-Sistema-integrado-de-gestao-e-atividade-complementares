@@ -1,0 +1,42 @@
+{
+  "name": "sigac--sistemas-integrado-de-gestao-de-atividades-complememtares-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "backup:demo": "node scripts/backup-before-reset.js",
+    "reset:demo": "node scripts/reset-demo-database.js",
+    "seed:senac": "node scripts/seed-senac-demo.js",
+    "prepare:presentation": "npm run backup:demo && npm run reset:demo && npm run seed:senac",
+    "db:export": "node scripts/export-sigac-content.js",
+    "db:migrate:sqlite": "node scripts/migrate-sqlite-to-postgres.js",
+    "db:test": "node scripts/test-postgres-connection.js",
+    "test": "node scripts/validate-delivery-1.js && node scripts/api-smoke-test.js",
+    "test:mobile": "node scripts/validate-delivery-2-mobile.js",
+    "email:preview": "node scripts/preview-email-templates.js",
+    "smtp:test": "node scripts/test-smtp.js",
+    "dev": "nodemon --config nodemon.json",
+    "start": "node server.js",
+    "start:mobile": "cd mobile/sigac-mobile && npm run start",
+    "start:mobile:clear": "cd mobile/sigac-mobile && npm run start:clear"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@expo/metro-runtime": "~56.0.14",
+    "chart.js": "^4.5.1",
+    "dotenv": "^17.2.3",
+    "expo": "56.0.9",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.7",
+    "pg": "^8.16.3",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.85.3"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.14"
+  }
+}
