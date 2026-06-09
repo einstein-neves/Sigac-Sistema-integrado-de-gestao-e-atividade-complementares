@@ -1,0 +1,51 @@
+﻿{
+  "tipo": "heuristica_transparente",
+  "descricao": "Classifica risco por progresso de horas, rejeições e pendências.",
+  "regras": {
+    "baixo": "progresso >= 75% e rejeitadas <= 1",
+    "alto": "progresso < 35% ou rejeitadas >= 3 ou pendentes >= 3",
+    "medio": "demais casos"
+  },
+  "resultados": [
+    {
+      "aluno_id": "101",
+      "horas_aprovadas": 40.0,
+      "rejeitadas": 0,
+      "pendentes": 0,
+      "meta_horas": 120.0,
+      "risco": "alto"
+    },
+    {
+      "aluno_id": "102",
+      "horas_aprovadas": 0.0,
+      "rejeitadas": 1,
+      "pendentes": 0,
+      "meta_horas": 120.0,
+      "risco": "alto"
+    },
+    {
+      "aluno_id": "103",
+      "horas_aprovadas": 0.0,
+      "rejeitadas": 0,
+      "pendentes": 1,
+      "meta_horas": 120.0,
+      "risco": "alto"
+    },
+    {
+      "aluno_id": "104",
+      "horas_aprovadas": 60.0,
+      "rejeitadas": 0,
+      "pendentes": 0,
+      "meta_horas": 120.0,
+      "risco": "medio"
+    },
+    {
+      "aluno_id": "105",
+      "horas_aprovadas": 0.0,
+      "rejeitadas": 1,
+      "pendentes": 0,
+      "meta_horas": 120.0,
+      "risco": "alto"
+    }
+  ]
+}

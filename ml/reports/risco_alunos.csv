@@ -1,0 +1,4 @@
+aluno_id,aluno_nome,aluno_email,matricula,curso,meta_horas,horas_aprovadas,percentual_concluido,qtd_aprovadas,qtd_rejeitadas,qtd_pendentes,risco
+user_mpscy51e_y7gbpk,Einstein IB Neves,einsteinbritoneves@gmail.com,ADS20260001,ADS,120.0,40.0,33.33,1,1,1,medio
+user_mpvkykk9_yq4umd,Guilherme Lucas Lima,guilhermelucasfe@gmail.com,LOG20260001,LOG,100.0,0.0,0.0,0,0,1,medio
+user_mpvljz0o_6lyf5w,Joao Guanabara,joaomuitafe@gmail.com,LOG20260002,LOG,100.0,0.0,0.0,0,0,1,medio

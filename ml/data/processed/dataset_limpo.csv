@@ -1,0 +1,6 @@
+aluno_id,curso,categoria,carga_horaria,status,data_envio,feedback,meta_horas
+101,ADS,curso,40.00,aprovado,2026-05-01,,120.00
+102,ADS,palestra,10.00,rejeitado,2026-05-02,Falta nome no certificado,120.00
+103,ADS,projeto,30.00,em_analise,2026-05-03,,120.00
+104,SISTEMAS,curso,60.00,aprovado,2026-05-04,,120.00
+105,ADS,evento,8.00,rejeitado,2026-05-05,Carga horaria ilegivel,120.00
